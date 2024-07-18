@@ -65,7 +65,7 @@
             this.whoAreYouLabel.AutoSize = true;
             this.whoAreYouLabel.BackColor = System.Drawing.Color.Transparent;
             this.whoAreYouLabel.Font = new System.Drawing.Font("Copperplate Gothic Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.whoAreYouLabel.Location = new System.Drawing.Point(388, 244);
+            this.whoAreYouLabel.Location = new System.Drawing.Point(406, 244);
             this.whoAreYouLabel.Name = "whoAreYouLabel";
             this.whoAreYouLabel.Size = new System.Drawing.Size(242, 32);
             this.whoAreYouLabel.TabIndex = 1;
@@ -199,6 +199,7 @@
             this.DoubleBuffered = true;
             this.MaximizeBox = false;
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Digital Journal";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
             this.Load += new System.EventHandler(this.LoginForm_Load);

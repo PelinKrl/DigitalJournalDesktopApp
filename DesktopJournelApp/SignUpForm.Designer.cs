@@ -64,6 +64,7 @@
             this.creUserNameTextBox.Name = "creUserNameTextBox";
             this.creUserNameTextBox.Size = new System.Drawing.Size(218, 25);
             this.creUserNameTextBox.TabIndex = 3;
+            this.creUserNameTextBox.TextChanged += new System.EventHandler(this.creUserNameTextBox_TextChanged);
             // 
             // passwordAgainTextBox
             // 
@@ -72,7 +73,7 @@
             this.passwordAgainTextBox.Name = "passwordAgainTextBox";
             this.passwordAgainTextBox.PasswordChar = '*';
             this.passwordAgainTextBox.Size = new System.Drawing.Size(218, 25);
-            this.passwordAgainTextBox.TabIndex = 4;
+            this.passwordAgainTextBox.TabIndex = 5;
             // 
             // locationTextBox
             // 
@@ -80,7 +81,7 @@
             this.locationTextBox.Location = new System.Drawing.Point(224, 307);
             this.locationTextBox.Name = "locationTextBox";
             this.locationTextBox.Size = new System.Drawing.Size(218, 25);
-            this.locationTextBox.TabIndex = 5;
+            this.locationTextBox.TabIndex = 6;
             this.locationTextBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // crePasswordTextBox
@@ -90,7 +91,7 @@
             this.crePasswordTextBox.Name = "crePasswordTextBox";
             this.crePasswordTextBox.PasswordChar = '*';
             this.crePasswordTextBox.Size = new System.Drawing.Size(218, 25);
-            this.crePasswordTextBox.TabIndex = 8;
+            this.crePasswordTextBox.TabIndex = 4;
             this.crePasswordTextBox.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // actualSignUpButton
@@ -202,7 +203,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "SignUpForm";
-            this.Text = "SS";
+            this.Text = "Sign Up";
             this.Load += new System.EventHandler(this.SignUpForm_Load);
             this.SignUpPanel.ResumeLayout(false);
             this.SignUpPanel.PerformLayout();

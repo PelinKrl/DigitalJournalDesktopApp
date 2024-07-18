@@ -114,5 +114,10 @@ namespace DesktopJournelApp
         {
 
         }
+
+        private void creUserNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

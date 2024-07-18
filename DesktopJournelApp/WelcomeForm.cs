@@ -95,11 +95,10 @@ namespace DesktopJournelApp
 
             string username = userName_textBox.Text;
             string password = password_textBox.Text;
-
-            if (SQL.ValidateUser(username, password))
+            int id = SQL.ValidateUser(username, password);
+            if (id!=-1)
             {
-                MessageBox.Show("Login successful!");
-                MainAppForm mainAppForm = new MainAppForm();
+                MainAppForm mainAppForm = new MainAppForm(id);
                 mainAppForm.Show();
             }
             else
@@ -131,6 +130,14 @@ namespace DesktopJournelApp
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                logIn_button.PerformClick();
+            }
         }
     }
 

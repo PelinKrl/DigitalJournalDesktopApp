@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,7 +53,54 @@
     <Compile Include="MainAppForm.Designer.cs">
       <DependentUpon>MainAppForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="pelinDatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pelinDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="pelinDatabaseDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pelinDatabaseDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Security.cs" />
+    <Compile Include="JournalPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="JournalPageUserControl.Designer.cs">
+      <DependentUpon>JournalPageUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CalendarPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CalendarPageUserControl.Designer.cs">
+      <DependentUpon>CalendarPageUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaskPlanerPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TaskPlanerPageUserControl.Designer.cs">
+      <DependentUpon>TaskPlanerPageUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReadingListPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReadingListPageUserControl.Designer.cs">
+      <DependentUpon>ReadingListPageUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WatchListPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include=".Designer.cs">
+      <DependentUpon>WatchListPageUserControl.cs</DependentUpon>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WeatherAppPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WeatherAppPageUserControl.Designer.cs">
+      <DependentUpon>WeatherAppPageUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="WelcomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +119,24 @@
     <EmbeddedResource Include="MainAppForm.resx">
       <DependentUpon>MainAppForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="JournalPageUserControl.resx">
+      <DependentUpon>JournalPageUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CalendarPageUserControl.resx">
+      <DependentUpon>CalendarPageUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaskPlanerPageUserControl.resx">
+      <DependentUpon>TaskPlanerPageUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReadingListPageUserControl.resx">
+      <DependentUpon>ReadingListPageUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WatchListPageUserControl.resx">
+      <DependentUpon>WatchListPageUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WeatherAppPageUserControl.resx">
+      <DependentUpon>WeatherAppPageUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -86,6 +152,28 @@
     <EmbeddedResource Include="SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="pelinDatabaseDataSet.xsc">
+      <DependentUpon>pelinDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pelinDatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pelinDatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pelinDatabaseDataSet.xss">
+      <DependentUpon>pelinDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pelinDatabaseDataSet1.xsc">
+      <DependentUpon>pelinDatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="pelinDatabaseDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pelinDatabaseDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pelinDatabaseDataSet1.xss">
+      <DependentUpon>pelinDatabaseDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
