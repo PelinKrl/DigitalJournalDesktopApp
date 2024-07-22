@@ -11,6 +11,9 @@ namespace DesktopJournelApp
         /// <summary>
         /// Uygulamanın ana girdi noktası.
         /// </summary>
+        /// 
+
+        
         [STAThread]
         static void Main()
         {
@@ -18,5 +21,6 @@ namespace DesktopJournelApp
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());
         }
+
     }
 }

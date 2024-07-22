@@ -36,23 +36,30 @@ namespace DesktopJournelApp
             int rate = -1;
 
             if (Rate!= string.Empty) { rate = Convert.ToInt32(Rate); }
+            if (rate < 11 && rate>-1) {
+                if (name != string.Empty && type != string.Empty && state != string.Empty && genre != string.Empty)
+                {
 
+                    SQL.InsertWatchList(name, type, director, state, rate, comment, genre);
 
-            if (name != string.Empty && type != string.Empty && state != string.Empty && genre != string.Empty)
-            {
-              
-                SQL.InsertWatchList(name, type, director, state, rate, comment, genre);
+                    WLNameTextBox.Clear();
+                    WLDirectorTextBox.Clear();
+                    WLRatingTextBox.Clear();
+                    WLCommentsRichTextBox.Clear();
 
-                WLNameTextBox.Clear();
-                WLDirectorTextBox.Clear();
-                WLRatingTextBox.Clear();
-                WLCommentsRichTextBox.Clear();
-                
+                }
+                else
+                {
+                    MessageBox.Show("You did not fill all the necessary fields.");
+                }
             }
             else
             {
-                MessageBox.Show("You did not fill all the necessary fields.");
+                MessageBox.Show("Rate must be in beetween 0 and 10");
             }
+
+
+           
 
         }
 
@@ -76,10 +83,12 @@ namespace DesktopJournelApp
 
         private void WLSearch_Click(object sender, EventArgs e)
         {
-            string name = WLSearchTextBox.Text; 
+            string name = WLSearchTextBox.Text;
+            string searchType = SearchComboBox.SelectedItem.ToString();
+
             if (!string.IsNullOrEmpty(name))
             {
-                SQL.SearchWatchListByName(name, WLdataGridView);
+                SQL.SearchWatchListByName(searchType, name, WLdataGridView);
             }
             else
             {
@@ -106,10 +115,10 @@ namespace DesktopJournelApp
         private void WLdataGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
 
-            // Get the selected row
+            
             DataGridViewRow selectedRow = WLdataGridView.Rows[e.RowIndex];
 
-            // Populate the text fields and combo boxes with the selected row's data
+            
             WLTypeComboBox.Text = selectedRow.Cells["Type"].Value.ToString();
             WLNameTextBox.Text = selectedRow.Cells["Name"].Value.ToString();
             WLDirectorTextBox.Text = selectedRow.Cells["Director"].Value.ToString();
@@ -123,13 +132,12 @@ namespace DesktopJournelApp
         {
             if (WLdataGridView.SelectedRows.Count > 0)
             {
-                // Get the selected row
+                
                 DataGridViewRow selectedRow = WLdataGridView.SelectedRows[0];
 
-                // Assuming your primary key column is 'ID' and it's the first column in the DataGridView
+                
                 int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
 
-                // Get the updated values from the text fields and combo boxes
                 string name = WLNameTextBox.Text;
                 string type = WLTypeComboBox.Text;
                 string state = WLStateComboBox.Text;
@@ -144,19 +152,28 @@ namespace DesktopJournelApp
                     rating = Convert.ToInt32(rate);
                 }
 
-                if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(type) && !string.IsNullOrEmpty(state) && !string.IsNullOrEmpty(genre))
+                if(rating < 11 && rating > -1)
                 {
-                    // Update the database
-                    SQL.UpdateWatchListItem(id, name, type, director, state, rating, comment, genre);
+                    if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(type) && !string.IsNullOrEmpty(state) && !string.IsNullOrEmpty(genre))
+                    {
+                        // Update the database
+                        SQL.UpdateWatchListItem(id, name, type, director, state, rating, comment, genre);
 
-                    // Refresh the DataGridView
-                    string query = "SELECT * FROM WatchTable UserId=@UserId";
-                    SQL.BindToGrid(query, WLdataGridView, MainAppForm._userId);
+                        // Refresh the DataGridView
+                        string query = "SELECT * FROM WatchTable WHERE UserId=@UserId";
+                        SQL.BindToGrid(query, WLdataGridView, MainAppForm._userId);
+                    }
+                    else
+                    {
+                        MessageBox.Show("You did not fill all the necessary fields.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("You did not fill all the necessary fields.");
+                    MessageBox.Show("Rate must be in beetween 0 and 10");
                 }
+
+                
             }
             else
             {
@@ -166,7 +183,6 @@ namespace DesktopJournelApp
 
         private void WLFilterByGenreButton_Click(object sender, EventArgs e)
         {
-            // Get the selected genres from the CheckedListBox
             List<string> selectedGenres = new List<string>();
             foreach (object item in GenresCheckedListBox.CheckedItems)
             {
@@ -175,13 +191,13 @@ namespace DesktopJournelApp
 
             if (selectedGenres.Count > 0)
             {
-                // Build the query to filter by selected genres
+                
                 string query = "SELECT * FROM WatchTable WHERE Genre IN ('" + string.Join("','", selectedGenres) + "') AND UserId=@UserId";
                 SQL.BindToGrid(query, WLdataGridView, MainAppForm._userId);
             }
             else
             {
-                // If no genres are selected, show all entries
+               
                 string query = "SELECT * FROM WatchTable WHERE UserId=@UserId ";
                 SQL.BindToGrid(query, WLdataGridView, MainAppForm._userId);
             }
@@ -192,7 +208,157 @@ namespace DesktopJournelApp
 
         private void WLGenresButton_Click(object sender, EventArgs e)
         {
-            GenresCheckedListBox.Visible = true; 
+            if (GenresCheckedListBox.Visible == true)
+            {
+                GenresCheckedListBox.Visible = false;
+            }
+            else
+            {
+                GenresCheckedListBox.Visible = true;
+            }
+           
+           
+
+        }
+
+        
+
+        private void WLListStateButton_Click(object sender, EventArgs e)
+        {
+            string state = WLStateFilterComboBox.SelectedItem.ToString();
+            if (!string.IsNullOrEmpty(state))
+            {
+                SQL.FilterWatchListByState(state, WLdataGridView, MainAppForm._userId);
+            }
+            else
+            {
+                MessageBox.Show("Please select a state to filter.");
+            }
+        }
+
+        private void WLdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void WLStateFilterComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WatchListPMPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GenresCheckedListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MyWatchListTitleLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void SearchComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GenreComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WLCommentsRichTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WLRatingTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WLStateComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WLSearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WLDirectorTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WLNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WLTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MovieTvSName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void watchTableBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

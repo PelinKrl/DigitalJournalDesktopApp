@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace DesktopJournelApp
@@ -11,5 +12,13 @@ namespace DesktopJournelApp
             
         }
 
+        private void WeatherAppPageUserControl_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+       
+
+        
     }
 }

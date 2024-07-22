@@ -76,17 +76,17 @@
     <Compile Include="CalendarPageUserControl.Designer.cs">
       <DependentUpon>CalendarPageUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="TaskPlanerPageUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TaskPlanerPageUserControl.Designer.cs">
-      <DependentUpon>TaskPlanerPageUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="ReadingListPageUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ReadingListPageUserControl.Designer.cs">
       <DependentUpon>ReadingListPageUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaskPlannerPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TaskPlannerPageUserControl.Designer.cs">
+      <DependentUpon>TaskPlannerPageUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="WatchListPageUserControl.cs">
       <SubType>UserControl</SubType>
@@ -125,11 +125,11 @@
     <EmbeddedResource Include="CalendarPageUserControl.resx">
       <DependentUpon>CalendarPageUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TaskPlanerPageUserControl.resx">
-      <DependentUpon>TaskPlanerPageUserControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ReadingListPageUserControl.resx">
       <DependentUpon>ReadingListPageUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaskPlannerPageUserControl.resx">
+      <DependentUpon>TaskPlannerPageUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WatchListPageUserControl.resx">
       <DependentUpon>WatchListPageUserControl.cs</DependentUpon>

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReadingListPageUserControl));
             this.RListBooksButton = new System.Windows.Forms.Button();
             this.RLSaveButton = new System.Windows.Forms.Button();
@@ -37,12 +36,23 @@
             this.label4 = new System.Windows.Forms.Label();
             this.RLRatingTextBox = new System.Windows.Forms.TextBox();
             this.WatchListPMPanel = new System.Windows.Forms.Panel();
+            this.RLListStateButton = new System.Windows.Forms.Button();
+            this.RLStateFilterComboBox = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.RLGenresCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.RLFilterByGenreButton = new System.Windows.Forms.Button();
+            this.RLGenresButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.RLdataGridView = new System.Windows.Forms.DataGridView();
-            this.booksTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pelinDatabaseDataSet = new DesktopJournelApp.pelinDatabaseDataSet();
             this.MyReadingListTitleLabel = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.RLMenuPanel = new System.Windows.Forms.Panel();
+            this.RLSearchComboBox = new System.Windows.Forms.ComboBox();
+            this.RLPageCountTextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.RLGenreComboBox = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.RLDeleteButton = new System.Windows.Forms.Button();
+            this.RLUpdateButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.RLStateComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,44 +62,42 @@
             this.label1 = new System.Windows.Forms.Label();
             this.RLNameTextBox = new System.Windows.Forms.TextBox();
             this.MovieTvSName = new System.Windows.Forms.Label();
-            this.booksTableTableAdapter = new DesktopJournelApp.pelinDatabaseDataSetTableAdapters.BooksTableTableAdapter();
-            this.WRUpdateButton = new System.Windows.Forms.Button();
-            this.WRDeleteButton = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.RLGenreComboBox = new System.Windows.Forms.ComboBox();
             this.WatchListPMPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RLdataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksTableBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pelinDatabaseDataSet)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.RLMenuPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // RListBooksButton
             // 
             this.RListBooksButton.Font = new System.Drawing.Font("Footlight MT Light", 11.8F);
-            this.RListBooksButton.Location = new System.Drawing.Point(786, 533);
+            this.RListBooksButton.Location = new System.Drawing.Point(567, 434);
+            this.RListBooksButton.Margin = new System.Windows.Forms.Padding(2);
             this.RListBooksButton.Name = "RListBooksButton";
-            this.RListBooksButton.Size = new System.Drawing.Size(129, 55);
+            this.RListBooksButton.Size = new System.Drawing.Size(97, 45);
             this.RListBooksButton.TabIndex = 5;
             this.RListBooksButton.Text = "List Books";
             this.RListBooksButton.UseVisualStyleBackColor = true;
+            this.RListBooksButton.Click += new System.EventHandler(this.RListBooksButton_Click);
             // 
             // RLSaveButton
             // 
             this.RLSaveButton.Font = new System.Drawing.Font("Footlight MT Light", 11.8F);
-            this.RLSaveButton.Location = new System.Drawing.Point(617, 497);
+            this.RLSaveButton.Location = new System.Drawing.Point(444, 404);
+            this.RLSaveButton.Margin = new System.Windows.Forms.Padding(2);
             this.RLSaveButton.Name = "RLSaveButton";
-            this.RLSaveButton.Size = new System.Drawing.Size(124, 55);
+            this.RLSaveButton.Size = new System.Drawing.Size(94, 45);
             this.RLSaveButton.TabIndex = 16;
             this.RLSaveButton.Text = "Save";
             this.RLSaveButton.UseVisualStyleBackColor = true;
+            this.RLSaveButton.Click += new System.EventHandler(this.RLSaveButton_Click);
             // 
             // RLCommentsRichTextBox
             // 
-            this.RLCommentsRichTextBox.Location = new System.Drawing.Point(166, 302);
+            this.RLCommentsRichTextBox.Location = new System.Drawing.Point(144, 242);
+            this.RLCommentsRichTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.RLCommentsRichTextBox.Name = "RLCommentsRichTextBox";
-            this.RLCommentsRichTextBox.Size = new System.Drawing.Size(586, 172);
+            this.RLCommentsRichTextBox.Size = new System.Drawing.Size(408, 140);
             this.RLCommentsRichTextBox.TabIndex = 15;
             this.RLCommentsRichTextBox.Text = "";
             // 
@@ -97,307 +105,439 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Footlight MT Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(8, 297);
+            this.label6.Location = new System.Drawing.Point(6, 241);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(146, 24);
+            this.label6.Size = new System.Drawing.Size(123, 20);
             this.label6.TabIndex = 14;
             this.label6.Text = "My Comments";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Footlight MT Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(210, 248);
+            this.label4.Location = new System.Drawing.Point(158, 202);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 24);
+            this.label4.Size = new System.Drawing.Size(41, 20);
             this.label4.TabIndex = 13;
             this.label4.Text = "/10";
             // 
             // RLRatingTextBox
             // 
             this.RLRatingTextBox.Font = new System.Drawing.Font("Footlight MT Light", 13.8F);
-            this.RLRatingTextBox.Location = new System.Drawing.Point(138, 238);
+            this.RLRatingTextBox.Location = new System.Drawing.Point(112, 193);
+            this.RLRatingTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.RLRatingTextBox.Name = "RLRatingTextBox";
-            this.RLRatingTextBox.Size = new System.Drawing.Size(59, 32);
+            this.RLRatingTextBox.Size = new System.Drawing.Size(45, 27);
             this.RLRatingTextBox.TabIndex = 12;
             // 
             // WatchListPMPanel
             // 
             this.WatchListPMPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.WatchListPMPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.WatchListPMPanel.Controls.Add(this.RLListStateButton);
+            this.WatchListPMPanel.Controls.Add(this.RLStateFilterComboBox);
+            this.WatchListPMPanel.Controls.Add(this.label8);
+            this.WatchListPMPanel.Controls.Add(this.RLGenresCheckedListBox);
+            this.WatchListPMPanel.Controls.Add(this.RLFilterByGenreButton);
+            this.WatchListPMPanel.Controls.Add(this.RLGenresButton);
             this.WatchListPMPanel.Controls.Add(this.pictureBox1);
             this.WatchListPMPanel.Controls.Add(this.RLdataGridView);
             this.WatchListPMPanel.Controls.Add(this.MyReadingListTitleLabel);
-            this.WatchListPMPanel.Controls.Add(this.panel1);
+            this.WatchListPMPanel.Controls.Add(this.RLMenuPanel);
             this.WatchListPMPanel.Controls.Add(this.RListBooksButton);
-            this.WatchListPMPanel.Location = new System.Drawing.Point(3, 3);
+            this.WatchListPMPanel.Location = new System.Drawing.Point(2, 2);
+            this.WatchListPMPanel.Margin = new System.Windows.Forms.Padding(2);
             this.WatchListPMPanel.Name = "WatchListPMPanel";
-            this.WatchListPMPanel.Size = new System.Drawing.Size(1834, 652);
+            this.WatchListPMPanel.Size = new System.Drawing.Size(1362, 546);
             this.WatchListPMPanel.TabIndex = 1;
+            // 
+            // RLListStateButton
+            // 
+            this.RLListStateButton.Font = new System.Drawing.Font("Footlight MT Light", 11.8F);
+            this.RLListStateButton.Location = new System.Drawing.Point(858, 6);
+            this.RLListStateButton.Margin = new System.Windows.Forms.Padding(2);
+            this.RLListStateButton.Name = "RLListStateButton";
+            this.RLListStateButton.Size = new System.Drawing.Size(86, 25);
+            this.RLListStateButton.TabIndex = 31;
+            this.RLListStateButton.Text = "List State";
+            this.RLListStateButton.UseVisualStyleBackColor = true;
+            // 
+            // RLStateFilterComboBox
+            // 
+            this.RLStateFilterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RLStateFilterComboBox.Font = new System.Drawing.Font("Footlight MT Light", 10.8F);
+            this.RLStateFilterComboBox.FormattingEnabled = true;
+            this.RLStateFilterComboBox.Items.AddRange(new object[] {
+            "Want to start",
+            "Currently reading",
+            "Finished"});
+            this.RLStateFilterComboBox.Location = new System.Drawing.Point(696, 9);
+            this.RLStateFilterComboBox.Margin = new System.Windows.Forms.Padding(2);
+            this.RLStateFilterComboBox.Name = "RLStateFilterComboBox";
+            this.RLStateFilterComboBox.Size = new System.Drawing.Size(155, 23);
+            this.RLStateFilterComboBox.TabIndex = 30;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Footlight MT Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(590, 11);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(108, 20);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "Choose State";
+            // 
+            // RLGenresCheckedListBox
+            // 
+            this.RLGenresCheckedListBox.CheckOnClick = true;
+            this.RLGenresCheckedListBox.FormattingEnabled = true;
+            this.RLGenresCheckedListBox.Items.AddRange(new object[] {
+            "Fantasy",
+            "Science Fiction",
+            "Mystery",
+            "Thriller",
+            "Romance",
+            "Historical Fiction",
+            "Horror",
+            "Young Adult",
+            "Non-Fiction",
+            "Biography",
+            "Memoir",
+            "Self-Help",
+            "Graphic Novel",
+            "Adventure",
+            "Dystopian",
+            "Crime",
+            "Contemporary Fiction",
+            "Paranormal",
+            "Literary Fiction",
+            "Children\'s Literature",
+            "Classic Literature",
+            "Poetry",
+            "Anthology",
+            "Short Stories"});
+            this.RLGenresCheckedListBox.Location = new System.Drawing.Point(1220, 40);
+            this.RLGenresCheckedListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.RLGenresCheckedListBox.Name = "RLGenresCheckedListBox";
+            this.RLGenresCheckedListBox.Size = new System.Drawing.Size(125, 304);
+            this.RLGenresCheckedListBox.TabIndex = 28;
+            this.RLGenresCheckedListBox.Visible = false;
+            // 
+            // RLFilterByGenreButton
+            // 
+            this.RLFilterByGenreButton.Font = new System.Drawing.Font("Footlight MT Light", 11.8F);
+            this.RLFilterByGenreButton.Location = new System.Drawing.Point(1148, 5);
+            this.RLFilterByGenreButton.Margin = new System.Windows.Forms.Padding(2);
+            this.RLFilterByGenreButton.Name = "RLFilterByGenreButton";
+            this.RLFilterByGenreButton.Size = new System.Drawing.Size(68, 32);
+            this.RLFilterByGenreButton.TabIndex = 27;
+            this.RLFilterByGenreButton.Text = "Filter";
+            this.RLFilterByGenreButton.UseVisualStyleBackColor = true;
+            this.RLFilterByGenreButton.Click += new System.EventHandler(this.RLFilterByGenreButton_Click);
+            // 
+            // RLGenresButton
+            // 
+            this.RLGenresButton.Font = new System.Drawing.Font("Footlight MT Light", 11.8F);
+            this.RLGenresButton.Location = new System.Drawing.Point(1220, 6);
+            this.RLGenresButton.Margin = new System.Windows.Forms.Padding(2);
+            this.RLGenresButton.Name = "RLGenresButton";
+            this.RLGenresButton.Size = new System.Drawing.Size(124, 32);
+            this.RLGenresButton.TabIndex = 26;
+            this.RLGenresButton.Text = "Genres";
+            this.RLGenresButton.UseVisualStyleBackColor = true;
+            this.RLGenresButton.Click += new System.EventHandler(this.RLGenresButton_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1653, 519);
+            this.pictureBox1.Location = new System.Drawing.Point(1207, 421);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(129, 106);
+            this.pictureBox1.Size = new System.Drawing.Size(136, 119);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
             // RLdataGridView
             // 
-            this.RLdataGridView.AutoGenerateColumns = false;
+            this.RLdataGridView.AllowUserToAddRows = false;
+            this.RLdataGridView.AllowUserToDeleteRows = false;
             this.RLdataGridView.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.RLdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.RLdataGridView.DataSource = this.booksTableBindingSource;
-            this.RLdataGridView.Location = new System.Drawing.Point(786, 49);
+            this.RLdataGridView.Location = new System.Drawing.Point(567, 40);
+            this.RLdataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.RLdataGridView.Name = "RLdataGridView";
+            this.RLdataGridView.ReadOnly = true;
             this.RLdataGridView.RowHeadersWidth = 51;
             this.RLdataGridView.RowTemplate.Height = 24;
-            this.RLdataGridView.Size = new System.Drawing.Size(996, 464);
+            this.RLdataGridView.Size = new System.Drawing.Size(778, 377);
             this.RLdataGridView.TabIndex = 2;
-            // 
-            // booksTableBindingSource
-            // 
-            this.booksTableBindingSource.DataMember = "BooksTable";
-            this.booksTableBindingSource.DataSource = this.pelinDatabaseDataSet;
-            // 
-            // pelinDatabaseDataSet
-            // 
-            this.pelinDatabaseDataSet.DataSetName = "pelinDatabaseDataSet";
-            this.pelinDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.RLdataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.RLdataGridView_RowHeaderMouseClick);
             // 
             // MyReadingListTitleLabel
             // 
             this.MyReadingListTitleLabel.AutoSize = true;
             this.MyReadingListTitleLabel.Font = new System.Drawing.Font("Footlight MT Light", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MyReadingListTitleLabel.Location = new System.Drawing.Point(21, 11);
+            this.MyReadingListTitleLabel.Location = new System.Drawing.Point(16, 9);
+            this.MyReadingListTitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MyReadingListTitleLabel.Name = "MyReadingListTitleLabel";
-            this.MyReadingListTitleLabel.Size = new System.Drawing.Size(229, 35);
+            this.MyReadingListTitleLabel.Size = new System.Drawing.Size(192, 29);
             this.MyReadingListTitleLabel.TabIndex = 1;
             this.MyReadingListTitleLabel.Text = "My Reading List";
             // 
-            // panel1
+            // RLMenuPanel
             // 
-            this.panel1.Controls.Add(this.RLGenreComboBox);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.WRDeleteButton);
-            this.panel1.Controls.Add(this.WRUpdateButton);
-            this.panel1.Controls.Add(this.RLSaveButton);
-            this.panel1.Controls.Add(this.RLCommentsRichTextBox);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.RLRatingTextBox);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.RLStateComboBox);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.RSearchTextBox);
-            this.panel1.Controls.Add(this.RLSearchButton);
-            this.panel1.Controls.Add(this.RLAuthorTextBox);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.RLNameTextBox);
-            this.panel1.Controls.Add(this.MovieTvSName);
-            this.panel1.Location = new System.Drawing.Point(5, 49);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(777, 571);
-            this.panel1.TabIndex = 0;
+            this.RLMenuPanel.Controls.Add(this.RLSearchComboBox);
+            this.RLMenuPanel.Controls.Add(this.RLPageCountTextBox);
+            this.RLMenuPanel.Controls.Add(this.label7);
+            this.RLMenuPanel.Controls.Add(this.RLGenreComboBox);
+            this.RLMenuPanel.Controls.Add(this.label5);
+            this.RLMenuPanel.Controls.Add(this.RLDeleteButton);
+            this.RLMenuPanel.Controls.Add(this.RLUpdateButton);
+            this.RLMenuPanel.Controls.Add(this.RLSaveButton);
+            this.RLMenuPanel.Controls.Add(this.RLCommentsRichTextBox);
+            this.RLMenuPanel.Controls.Add(this.label6);
+            this.RLMenuPanel.Controls.Add(this.label4);
+            this.RLMenuPanel.Controls.Add(this.RLRatingTextBox);
+            this.RLMenuPanel.Controls.Add(this.label3);
+            this.RLMenuPanel.Controls.Add(this.RLStateComboBox);
+            this.RLMenuPanel.Controls.Add(this.label2);
+            this.RLMenuPanel.Controls.Add(this.RSearchTextBox);
+            this.RLMenuPanel.Controls.Add(this.RLSearchButton);
+            this.RLMenuPanel.Controls.Add(this.RLAuthorTextBox);
+            this.RLMenuPanel.Controls.Add(this.label1);
+            this.RLMenuPanel.Controls.Add(this.RLNameTextBox);
+            this.RLMenuPanel.Controls.Add(this.MovieTvSName);
+            this.RLMenuPanel.Location = new System.Drawing.Point(4, 40);
+            this.RLMenuPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.RLMenuPanel.Name = "RLMenuPanel";
+            this.RLMenuPanel.Size = new System.Drawing.Size(559, 464);
+            this.RLMenuPanel.TabIndex = 0;
             // 
-            // label3
+            // RLSearchComboBox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Footlight MT Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 245);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 24);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "My Rating";
+            this.RLSearchComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RLSearchComboBox.Font = new System.Drawing.Font("Footlight MT Light", 10.8F);
+            this.RLSearchComboBox.FormattingEnabled = true;
+            this.RLSearchComboBox.Items.AddRange(new object[] {
+            "Book Name",
+            "Author Name"});
+            this.RLSearchComboBox.Location = new System.Drawing.Point(2, 26);
+            this.RLSearchComboBox.Margin = new System.Windows.Forms.Padding(2);
+            this.RLSearchComboBox.Name = "RLSearchComboBox";
+            this.RLSearchComboBox.Size = new System.Drawing.Size(127, 23);
+            this.RLSearchComboBox.TabIndex = 26;
+            this.RLSearchComboBox.SelectedIndexChanged += new System.EventHandler(this.RLSearchComboBox_SelectedIndexChanged);
             // 
-            // RLStateComboBox
+            // RLPageCountTextBox
             // 
-            this.RLStateComboBox.Font = new System.Drawing.Font("Footlight MT Light", 10.8F);
-            this.RLStateComboBox.FormattingEnabled = true;
-            this.RLStateComboBox.Items.AddRange(new object[] {
-            "Want to start",
-            "Currently reading",
-            "Finished"});
-            this.RLStateComboBox.Location = new System.Drawing.Point(139, 197);
-            this.RLStateComboBox.Name = "RLStateComboBox";
-            this.RLStateComboBox.Size = new System.Drawing.Size(259, 27);
-            this.RLStateComboBox.TabIndex = 10;
+            this.RLPageCountTextBox.Font = new System.Drawing.Font("Footlight MT Light", 13.8F);
+            this.RLPageCountTextBox.Location = new System.Drawing.Point(430, 199);
+            this.RLPageCountTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.RLPageCountTextBox.Name = "RLPageCountTextBox";
+            this.RLPageCountTextBox.Size = new System.Drawing.Size(122, 27);
+            this.RLPageCountTextBox.TabIndex = 25;
             // 
-            // label2
+            // label7
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Footlight MT Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 199);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 24);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "State";
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Footlight MT Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(301, 202);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(99, 20);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Page Count";
             // 
-            // RSearchTextBox
+            // RLGenreComboBox
             // 
-            this.RSearchTextBox.Font = new System.Drawing.Font("Footlight MT Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RSearchTextBox.Location = new System.Drawing.Point(9, 28);
-            this.RSearchTextBox.Name = "RSearchTextBox";
-            this.RSearchTextBox.Size = new System.Drawing.Size(604, 32);
-            this.RSearchTextBox.TabIndex = 8;
-            // 
-            // RLSearchButton
-            // 
-            this.RLSearchButton.Font = new System.Drawing.Font("Footlight MT Light", 11.8F);
-            this.RLSearchButton.Location = new System.Drawing.Point(624, 25);
-            this.RLSearchButton.Name = "RLSearchButton";
-            this.RLSearchButton.Size = new System.Drawing.Size(128, 38);
-            this.RLSearchButton.TabIndex = 7;
-            this.RLSearchButton.Text = "Search";
-            this.RLSearchButton.UseVisualStyleBackColor = true;
-            // 
-            // RLAuthorTextBox
-            // 
-            this.RLAuthorTextBox.Font = new System.Drawing.Font("Footlight MT Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RLAuthorTextBox.Location = new System.Drawing.Point(143, 140);
-            this.RLAuthorTextBox.Name = "RLAuthorTextBox";
-            this.RLAuthorTextBox.Size = new System.Drawing.Size(602, 32);
-            this.RLAuthorTextBox.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Footlight MT Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 147);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 24);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Author";
-            // 
-            // RLNameTextBox
-            // 
-            this.RLNameTextBox.Font = new System.Drawing.Font("Footlight MT Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RLNameTextBox.Location = new System.Drawing.Point(198, 87);
-            this.RLNameTextBox.Name = "RLNameTextBox";
-            this.RLNameTextBox.Size = new System.Drawing.Size(548, 32);
-            this.RLNameTextBox.TabIndex = 2;
-            // 
-            // MovieTvSName
-            // 
-            this.MovieTvSName.AutoSize = true;
-            this.MovieTvSName.Font = new System.Drawing.Font("Footlight MT Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MovieTvSName.Location = new System.Drawing.Point(4, 94);
-            this.MovieTvSName.Name = "MovieTvSName";
-            this.MovieTvSName.Size = new System.Drawing.Size(177, 24);
-            this.MovieTvSName.TabIndex = 0;
-            this.MovieTvSName.Text = "Name of the book";
-            // 
-            // booksTableTableAdapter
-            // 
-            this.booksTableTableAdapter.ClearBeforeFill = true;
-            // 
-            // WRUpdateButton
-            // 
-            this.WRUpdateButton.Font = new System.Drawing.Font("Footlight MT Light", 11.8F);
-            this.WRUpdateButton.Location = new System.Drawing.Point(472, 497);
-            this.WRUpdateButton.Name = "WRUpdateButton";
-            this.WRUpdateButton.Size = new System.Drawing.Size(124, 55);
-            this.WRUpdateButton.TabIndex = 20;
-            this.WRUpdateButton.Text = "Update";
-            this.WRUpdateButton.UseVisualStyleBackColor = true;
-            // 
-            // WRDeleteButton
-            // 
-            this.WRDeleteButton.Font = new System.Drawing.Font("Footlight MT Light", 11.8F);
-            this.WRDeleteButton.Location = new System.Drawing.Point(333, 497);
-            this.WRDeleteButton.Name = "WRDeleteButton";
-            this.WRDeleteButton.Size = new System.Drawing.Size(124, 55);
-            this.WRDeleteButton.TabIndex = 21;
-            this.WRDeleteButton.Text = "Delete";
-            this.WRDeleteButton.UseVisualStyleBackColor = true;
+            this.RLGenreComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RLGenreComboBox.Font = new System.Drawing.Font("Footlight MT Light", 10.8F);
+            this.RLGenreComboBox.FormattingEnabled = true;
+            this.RLGenreComboBox.Items.AddRange(new object[] {
+            "Fantasy",
+            "Science Fiction",
+            "Mystery",
+            "Thriller",
+            "Romance",
+            "Historical Fiction",
+            "Horror",
+            "Young Adult",
+            "Non-Fiction",
+            "Biography",
+            "Memoir",
+            "Self-Help",
+            "Graphic Novel",
+            "Adventure",
+            "Dystopian",
+            "Crime",
+            "Contemporary Fiction",
+            "Paranormal",
+            "Literary Fiction",
+            "Children\'s Literature",
+            "Classic Literature",
+            "Poetry",
+            "Anthology",
+            "Short Stories"});
+            this.RLGenreComboBox.Location = new System.Drawing.Point(430, 157);
+            this.RLGenreComboBox.Margin = new System.Windows.Forms.Padding(2);
+            this.RLGenreComboBox.Name = "RLGenreComboBox";
+            this.RLGenreComboBox.Size = new System.Drawing.Size(122, 23);
+            this.RLGenreComboBox.TabIndex = 23;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Footlight MT Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(499, 201);
+            this.label5.Location = new System.Drawing.Point(343, 160);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 24);
+            this.label5.Size = new System.Drawing.Size(57, 20);
             this.label5.TabIndex = 22;
             this.label5.Text = "Genre";
             // 
-            // RLGenreComboBox
+            // RLDeleteButton
             // 
-            this.RLGenreComboBox.Font = new System.Drawing.Font("Footlight MT Light", 10.8F);
-            this.RLGenreComboBox.FormattingEnabled = true;
-            this.RLGenreComboBox.Items.AddRange(new object[] {
-            "",
-            "Fantasy",
-            "",
-            "Science Fiction",
-            "",
-            "Mystery",
-            "",
-            "Thriller",
-            "",
-            "Romance",
-            "",
-            "Historical Fiction",
-            "",
-            "Horror",
-            "",
-            "Young Adult",
-            "",
-            "Non-Fiction",
-            "",
-            "Biography",
-            "",
-            "Memoir",
-            "",
-            "Self-Help",
-            "",
-            "Graphic Novel",
-            "",
-            "Adventure",
-            "",
-            "Dystopian",
-            "",
-            "Crime",
-            "",
-            "Contemporary Fiction",
-            "",
-            "Paranormal",
-            "",
-            "Literary Fiction",
-            "",
-            "Children\'s Literature",
-            "",
-            "Classic Literature",
-            "",
-            "Poetry",
-            "",
-            "Anthology",
-            "",
-            "Short Stories"});
-            this.RLGenreComboBox.Location = new System.Drawing.Point(583, 201);
-            this.RLGenreComboBox.Name = "RLGenreComboBox";
-            this.RLGenreComboBox.Size = new System.Drawing.Size(162, 27);
-            this.RLGenreComboBox.TabIndex = 23;
+            this.RLDeleteButton.Font = new System.Drawing.Font("Footlight MT Light", 11.8F);
+            this.RLDeleteButton.Location = new System.Drawing.Point(250, 404);
+            this.RLDeleteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.RLDeleteButton.Name = "RLDeleteButton";
+            this.RLDeleteButton.Size = new System.Drawing.Size(93, 45);
+            this.RLDeleteButton.TabIndex = 21;
+            this.RLDeleteButton.Text = "Delete";
+            this.RLDeleteButton.UseVisualStyleBackColor = true;
+            this.RLDeleteButton.Click += new System.EventHandler(this.RLDeleteButton_Click);
+            // 
+            // RLUpdateButton
+            // 
+            this.RLUpdateButton.Font = new System.Drawing.Font("Footlight MT Light", 11.8F);
+            this.RLUpdateButton.Location = new System.Drawing.Point(347, 404);
+            this.RLUpdateButton.Margin = new System.Windows.Forms.Padding(2);
+            this.RLUpdateButton.Name = "RLUpdateButton";
+            this.RLUpdateButton.Size = new System.Drawing.Size(93, 45);
+            this.RLUpdateButton.TabIndex = 20;
+            this.RLUpdateButton.Text = "Update";
+            this.RLUpdateButton.UseVisualStyleBackColor = true;
+            this.RLUpdateButton.Click += new System.EventHandler(this.RLUpdateButton_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Footlight MT Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(7, 199);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 20);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "My Rating";
+            // 
+            // RLStateComboBox
+            // 
+            this.RLStateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RLStateComboBox.Font = new System.Drawing.Font("Footlight MT Light", 10.8F);
+            this.RLStateComboBox.FormattingEnabled = true;
+            this.RLStateComboBox.Items.AddRange(new object[] {
+            "Want to start",
+            "Currently reading",
+            "Finished"});
+            this.RLStateComboBox.Location = new System.Drawing.Point(104, 160);
+            this.RLStateComboBox.Margin = new System.Windows.Forms.Padding(2);
+            this.RLStateComboBox.Name = "RLStateComboBox";
+            this.RLStateComboBox.Size = new System.Drawing.Size(195, 23);
+            this.RLStateComboBox.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Footlight MT Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 162);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 20);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "State";
+            // 
+            // RSearchTextBox
+            // 
+            this.RSearchTextBox.Font = new System.Drawing.Font("Footlight MT Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RSearchTextBox.Location = new System.Drawing.Point(134, 23);
+            this.RSearchTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.RSearchTextBox.Name = "RSearchTextBox";
+            this.RSearchTextBox.Size = new System.Drawing.Size(318, 27);
+            this.RSearchTextBox.TabIndex = 8;
+            // 
+            // RLSearchButton
+            // 
+            this.RLSearchButton.Font = new System.Drawing.Font("Footlight MT Light", 11.8F);
+            this.RLSearchButton.Location = new System.Drawing.Point(456, 23);
+            this.RLSearchButton.Margin = new System.Windows.Forms.Padding(2);
+            this.RLSearchButton.Name = "RLSearchButton";
+            this.RLSearchButton.Size = new System.Drawing.Size(96, 31);
+            this.RLSearchButton.TabIndex = 7;
+            this.RLSearchButton.Text = "Search";
+            this.RLSearchButton.UseVisualStyleBackColor = true;
+            this.RLSearchButton.Click += new System.EventHandler(this.RLSearchButton_Click);
+            // 
+            // RLAuthorTextBox
+            // 
+            this.RLAuthorTextBox.Font = new System.Drawing.Font("Footlight MT Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RLAuthorTextBox.Location = new System.Drawing.Point(117, 114);
+            this.RLAuthorTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.RLAuthorTextBox.Name = "RLAuthorTextBox";
+            this.RLAuthorTextBox.Size = new System.Drawing.Size(435, 27);
+            this.RLAuthorTextBox.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Footlight MT Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(4, 119);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Author";
+            // 
+            // RLNameTextBox
+            // 
+            this.RLNameTextBox.Font = new System.Drawing.Font("Footlight MT Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RLNameTextBox.Location = new System.Drawing.Point(158, 71);
+            this.RLNameTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.RLNameTextBox.Name = "RLNameTextBox";
+            this.RLNameTextBox.Size = new System.Drawing.Size(394, 27);
+            this.RLNameTextBox.TabIndex = 2;
+            // 
+            // MovieTvSName
+            // 
+            this.MovieTvSName.AutoSize = true;
+            this.MovieTvSName.Font = new System.Drawing.Font("Footlight MT Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MovieTvSName.Location = new System.Drawing.Point(2, 76);
+            this.MovieTvSName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MovieTvSName.Name = "MovieTvSName";
+            this.MovieTvSName.Size = new System.Drawing.Size(147, 20);
+            this.MovieTvSName.TabIndex = 0;
+            this.MovieTvSName.Text = "Name of the book";
             // 
             // ReadingListPageUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.WatchListPMPanel);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ReadingListPageUserControl";
-            this.Size = new System.Drawing.Size(1873, 706);
+            this.Size = new System.Drawing.Size(1366, 549);
             this.WatchListPMPanel.ResumeLayout(false);
             this.WatchListPMPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RLdataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksTableBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pelinDatabaseDataSet)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.RLMenuPanel.ResumeLayout(false);
+            this.RLMenuPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -414,7 +554,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView RLdataGridView;
         private System.Windows.Forms.Label MyReadingListTitleLabel;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel RLMenuPanel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox RLStateComboBox;
         private System.Windows.Forms.Label label2;
@@ -424,12 +564,18 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox RLNameTextBox;
         private System.Windows.Forms.Label MovieTvSName;
-        private System.Windows.Forms.BindingSource booksTableBindingSource;
-        private pelinDatabaseDataSet pelinDatabaseDataSet;
-        private pelinDatabaseDataSetTableAdapters.BooksTableTableAdapter booksTableTableAdapter;
-        private System.Windows.Forms.Button WRUpdateButton;
-        private System.Windows.Forms.Button WRDeleteButton;
+        private System.Windows.Forms.Button RLUpdateButton;
+        private System.Windows.Forms.Button RLDeleteButton;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox RLGenreComboBox;
+        private System.Windows.Forms.Button RLGenresButton;
+        private System.Windows.Forms.Button RLFilterByGenreButton;
+        private System.Windows.Forms.CheckedListBox RLGenresCheckedListBox;
+        private System.Windows.Forms.TextBox RLPageCountTextBox;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox RLSearchComboBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox RLStateFilterComboBox;
+        private System.Windows.Forms.Button RLListStateButton;
     }
 }

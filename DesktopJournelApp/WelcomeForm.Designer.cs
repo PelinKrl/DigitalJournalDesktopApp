@@ -58,7 +58,7 @@
             this.welcomeLabel.Size = new System.Drawing.Size(841, 48);
             this.welcomeLabel.TabIndex = 0;
             this.welcomeLabel.Text = "Welcome to Your Digital Journal";
-            this.welcomeLabel.Click += new System.EventHandler(this.welcomeLabel_Click);
+            
             // 
             // whoAreYouLabel
             // 
@@ -70,7 +70,7 @@
             this.whoAreYouLabel.Size = new System.Drawing.Size(242, 32);
             this.whoAreYouLabel.TabIndex = 1;
             this.whoAreYouLabel.Text = "Who Are You?";
-            this.whoAreYouLabel.Click += new System.EventHandler(this.whoAreYouLabel_Click);
+            
             // 
             // userNameLabel
             // 
@@ -110,7 +110,7 @@
             this.password_textBox.PasswordChar = '*';
             this.password_textBox.Size = new System.Drawing.Size(343, 25);
             this.password_textBox.TabIndex = 5;
-            this.password_textBox.TextChanged += new System.EventHandler(this.password_textBox_TextChanged);
+            
             // 
             // showPassword_checkBox
             // 
@@ -160,7 +160,7 @@
             this.logIn_Panel.Name = "logIn_Panel";
             this.logIn_Panel.Size = new System.Drawing.Size(577, 303);
             this.logIn_Panel.TabIndex = 9;
-            this.logIn_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.logIn_Panel_Paint);
+            
             // 
             // pictureBox2
             // 

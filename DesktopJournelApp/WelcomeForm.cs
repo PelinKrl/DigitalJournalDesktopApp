@@ -24,15 +24,6 @@ namespace DesktopJournelApp
             
         }
 
-        private void welcomeLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void whoAreYouLabel_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void LoginForm_Paint(object sender, PaintEventArgs e)
         {
@@ -83,11 +74,7 @@ namespace DesktopJournelApp
             password_textBox.PasswordChar = showPassword_checkBox.Checked ? '\0' : '*'; 
         }
 
-        private void password_textBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
        
 
         private void logIn_button_Click(object sender, EventArgs e)
@@ -122,15 +109,7 @@ namespace DesktopJournelApp
             signUpForm.Show(); 
         }
 
-        private void logIn_Panel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
         {
