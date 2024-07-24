@@ -49,54 +49,54 @@
             // SignUplabel
             // 
             this.SignUplabel.AutoSize = true;
-            this.SignUplabel.Font = new System.Drawing.Font("Copperplate Gothic Bold", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SignUplabel.Location = new System.Drawing.Point(93, 49);
+            this.SignUplabel.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignUplabel.Location = new System.Drawing.Point(80, 49);
             this.SignUplabel.Name = "SignUplabel";
-            this.SignUplabel.Size = new System.Drawing.Size(283, 31);
+            this.SignUplabel.Size = new System.Drawing.Size(303, 31);
             this.SignUplabel.TabIndex = 0;
             this.SignUplabel.Text = "Let\'s Sign You Up";
             this.SignUplabel.Click += new System.EventHandler(this.SignUplabel_Click);
             // 
             // creUserNameTextBox
             // 
-            this.creUserNameTextBox.Font = new System.Drawing.Font("Footlight MT Light", 10.2F);
-            this.creUserNameTextBox.Location = new System.Drawing.Point(224, 115);
+            this.creUserNameTextBox.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.creUserNameTextBox.Location = new System.Drawing.Point(257, 115);
             this.creUserNameTextBox.Name = "creUserNameTextBox";
-            this.creUserNameTextBox.Size = new System.Drawing.Size(218, 25);
+            this.creUserNameTextBox.Size = new System.Drawing.Size(195, 30);
             this.creUserNameTextBox.TabIndex = 3;
             this.creUserNameTextBox.TextChanged += new System.EventHandler(this.creUserNameTextBox_TextChanged);
             // 
             // passwordAgainTextBox
             // 
-            this.passwordAgainTextBox.Font = new System.Drawing.Font("Footlight MT Light", 10.2F);
-            this.passwordAgainTextBox.Location = new System.Drawing.Point(224, 237);
+            this.passwordAgainTextBox.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordAgainTextBox.Location = new System.Drawing.Point(257, 237);
             this.passwordAgainTextBox.Name = "passwordAgainTextBox";
             this.passwordAgainTextBox.PasswordChar = '*';
-            this.passwordAgainTextBox.Size = new System.Drawing.Size(218, 25);
+            this.passwordAgainTextBox.Size = new System.Drawing.Size(195, 30);
             this.passwordAgainTextBox.TabIndex = 5;
             // 
             // locationTextBox
             // 
-            this.locationTextBox.Font = new System.Drawing.Font("Footlight MT Light", 10.2F);
-            this.locationTextBox.Location = new System.Drawing.Point(224, 307);
+            this.locationTextBox.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.locationTextBox.Location = new System.Drawing.Point(257, 304);
             this.locationTextBox.Name = "locationTextBox";
-            this.locationTextBox.Size = new System.Drawing.Size(218, 25);
+            this.locationTextBox.Size = new System.Drawing.Size(195, 30);
             this.locationTextBox.TabIndex = 6;
             this.locationTextBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // crePasswordTextBox
             // 
-            this.crePasswordTextBox.Font = new System.Drawing.Font("Footlight MT Light", 10.2F);
-            this.crePasswordTextBox.Location = new System.Drawing.Point(224, 175);
+            this.crePasswordTextBox.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.crePasswordTextBox.Location = new System.Drawing.Point(257, 175);
             this.crePasswordTextBox.Name = "crePasswordTextBox";
             this.crePasswordTextBox.PasswordChar = '*';
-            this.crePasswordTextBox.Size = new System.Drawing.Size(218, 25);
+            this.crePasswordTextBox.Size = new System.Drawing.Size(194, 30);
             this.crePasswordTextBox.TabIndex = 4;
             this.crePasswordTextBox.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // actualSignUpButton
             // 
-            this.actualSignUpButton.Font = new System.Drawing.Font("Footlight MT Light", 10.2F);
+            this.actualSignUpButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.actualSignUpButton.Location = new System.Drawing.Point(304, 366);
             this.actualSignUpButton.Name = "actualSignUpButton";
             this.actualSignUpButton.Size = new System.Drawing.Size(125, 51);
@@ -128,10 +128,10 @@
             // 
             this.showPassword_checkBoxSP.AutoSize = true;
             this.showPassword_checkBoxSP.BackColor = System.Drawing.Color.Transparent;
-            this.showPassword_checkBoxSP.Font = new System.Drawing.Font("Footlight MT Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showPassword_checkBoxSP.Location = new System.Drawing.Point(304, 268);
+            this.showPassword_checkBoxSP.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showPassword_checkBoxSP.Location = new System.Drawing.Point(319, 273);
             this.showPassword_checkBoxSP.Name = "showPassword_checkBoxSP";
-            this.showPassword_checkBoxSP.Size = new System.Drawing.Size(138, 23);
+            this.showPassword_checkBoxSP.Size = new System.Drawing.Size(133, 20);
             this.showPassword_checkBoxSP.TabIndex = 11;
             this.showPassword_checkBoxSP.Text = "Show Password";
             this.showPassword_checkBoxSP.UseVisualStyleBackColor = false;
@@ -140,10 +140,10 @@
             // passwordAgainLabel
             // 
             this.passwordAgainLabel.AutoSize = true;
-            this.passwordAgainLabel.Font = new System.Drawing.Font("Footlight MT Light", 12F);
-            this.passwordAgainLabel.Location = new System.Drawing.Point(25, 237);
+            this.passwordAgainLabel.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordAgainLabel.Location = new System.Drawing.Point(16, 237);
             this.passwordAgainLabel.Name = "passwordAgainLabel";
-            this.passwordAgainLabel.Size = new System.Drawing.Size(134, 20);
+            this.passwordAgainLabel.Size = new System.Drawing.Size(178, 23);
             this.passwordAgainLabel.TabIndex = 10;
             this.passwordAgainLabel.Text = "Password again";
             this.passwordAgainLabel.Click += new System.EventHandler(this.passwordAgainLabel_Click);
@@ -151,10 +151,10 @@
             // locationLabel
             // 
             this.locationLabel.AutoSize = true;
-            this.locationLabel.Font = new System.Drawing.Font("Footlight MT Light", 12F);
-            this.locationLabel.Location = new System.Drawing.Point(25, 307);
+            this.locationLabel.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.locationLabel.Location = new System.Drawing.Point(13, 307);
             this.locationLabel.Name = "locationLabel";
-            this.locationLabel.Size = new System.Drawing.Size(168, 20);
+            this.locationLabel.Size = new System.Drawing.Size(226, 23);
             this.locationLabel.TabIndex = 6;
             this.locationLabel.Text = "Where do you live?";
             this.locationLabel.Click += new System.EventHandler(this.locationLabel_Click);
@@ -162,10 +162,10 @@
             // crePasswordLabel
             // 
             this.crePasswordLabel.AutoSize = true;
-            this.crePasswordLabel.Font = new System.Drawing.Font("Footlight MT Light", 12F);
-            this.crePasswordLabel.Location = new System.Drawing.Point(25, 177);
+            this.crePasswordLabel.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.crePasswordLabel.Location = new System.Drawing.Point(16, 177);
             this.crePasswordLabel.Name = "crePasswordLabel";
-            this.crePasswordLabel.Size = new System.Drawing.Size(144, 20);
+            this.crePasswordLabel.Size = new System.Drawing.Size(190, 23);
             this.crePasswordLabel.TabIndex = 7;
             this.crePasswordLabel.Text = "Create password";
             this.crePasswordLabel.Click += new System.EventHandler(this.crePasswordLabel_Click);
@@ -173,10 +173,10 @@
             // creUserNameLabel
             // 
             this.creUserNameLabel.AutoSize = true;
-            this.creUserNameLabel.Font = new System.Drawing.Font("Footlight MT Light", 12F);
-            this.creUserNameLabel.Location = new System.Drawing.Point(25, 117);
+            this.creUserNameLabel.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.creUserNameLabel.Location = new System.Drawing.Point(15, 117);
             this.creUserNameLabel.Name = "creUserNameLabel";
-            this.creUserNameLabel.Size = new System.Drawing.Size(147, 20);
+            this.creUserNameLabel.Size = new System.Drawing.Size(190, 23);
             this.creUserNameLabel.TabIndex = 1;
             this.creUserNameLabel.Text = "Create username";
             this.creUserNameLabel.Click += new System.EventHandler(this.creUserNameLabel_Click);

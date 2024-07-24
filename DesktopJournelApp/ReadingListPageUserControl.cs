@@ -15,9 +15,22 @@ namespace DesktopJournelApp
         public ReadingListPageUserControl()
         {
             InitializeComponent();
+            LoadBookGenres();
         }
 
         public DataGridView RldataGridView;
+
+        private void LoadBookGenres()
+        {
+            List<string> genres = SQL.GetBookGenres();
+            RLGenreComboBox.Items.Clear();
+            RLGenresCheckedListBox.Items.Clear();
+            foreach (string genre in genres)
+            {
+                RLGenreComboBox.Items.Add(genre);
+                RLGenresCheckedListBox.Items.Add(genre);
+            }
+        }
 
         private void RLSaveButton_Click(object sender, EventArgs e)
         {
@@ -193,15 +206,7 @@ namespace DesktopJournelApp
             RLGenresCheckedListBox.Visible = false;
         }
 
-        private void RLSearchComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 
 

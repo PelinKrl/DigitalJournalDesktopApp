@@ -19,9 +19,22 @@ namespace DesktopJournelApp
         public WatchListPageUserControl()
         {
             InitializeComponent();
+            LoadGenres();
         }
 
         public DataGridView WldataGridView;
+
+        private void LoadGenres()
+        {
+            List<string> genres = SQL.GetMovieTvShowGenres();
+            GenreComboBox.Items.Clear();
+            GenresCheckedListBox.Items.Clear ();
+            foreach (string genre in genres)
+            {
+                GenreComboBox.Items.Add(genre);
+                GenresCheckedListBox.Items.Add(genre);
+            }
+        }
 
         private void WLSaveButton_Click(object sender, EventArgs e)
         {

@@ -327,8 +327,20 @@ namespace DesktopJournelApp
             DisplayTasksForDate(selectedDate);
         }
 
+        private void SettingPictureBox_Click(object sender, EventArgs e)
+        {
+           SettingsForm settingForm = new SettingsForm();
+           settingForm.Show();
+        }
 
+        private void WeeklyHabbitGraphLabel_Click(object sender, EventArgs e)
+        {
 
-        
+        }
+
+        private void todaysReminderLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

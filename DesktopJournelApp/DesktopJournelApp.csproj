@@ -47,6 +47,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddGenreSettingUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddGenreSettingUserControl.Designer.cs">
+      <DependentUpon>AddGenreSettingUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeProfileValuesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChangeProfileValuesUserControl.Designer.cs">
+      <DependentUpon>ChangeProfileValuesUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainAppForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +134,15 @@
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SQL.cs" />
+    <EmbeddedResource Include="AddGenreSettingUserControl.resx">
+      <DependentUpon>AddGenreSettingUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeProfileValuesUserControl.resx">
+      <DependentUpon>ChangeProfileValuesUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainAppForm.resx">
       <DependentUpon>MainAppForm.cs</DependentUpon>
     </EmbeddedResource>

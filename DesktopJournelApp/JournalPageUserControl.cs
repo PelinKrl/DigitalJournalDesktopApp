@@ -23,14 +23,19 @@ namespace DesktopJournelApp
         private void JournalSaveButton_Click(object sender, EventArgs e)
         {
             string text = JournalRichTextBox.Text;
-            if (text != string.Empty) {
-                SQL.InsertJournalText(text);
-            }else
+            DateTime selectedDate = JournalDateTimePicker.Value.Date;
+
+            if (!string.IsNullOrEmpty(text))
             {
-                MessageBox.Show("You did not write anything yet"); 
+                SQL.InsertJournalText(selectedDate, text);
+                MessageBox.Show("Journal entry saved successfully.");
+            }
+            else
+            {
+                MessageBox.Show("You did not write anything yet.");
             }
 
-            
+
 
         }
 
@@ -38,21 +43,9 @@ namespace DesktopJournelApp
         {
             DateTime selectedDate = JournalDateTimePicker.Value.Date;
 
-            
             string journalText = SQL.GetJournalTextByDate(selectedDate);
 
-            
-            //JournalRichTextBox.Text = journalText;
-
-            //if (selectedDate != DateTime.Today)
-            //{
-            //    JournalRichTextBox.ReadOnly = true;
-            //}
-            //else
-            //{
-            //    JournalRichTextBox.ReadOnly = false;
-            //}
-
+            JournalRichTextBox.Text = journalText;
         }
 
         private void TrackSaveButton_Click(object sender, EventArgs e)

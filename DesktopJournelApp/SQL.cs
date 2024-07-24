@@ -179,30 +179,50 @@ namespace DesktopJournelApp
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
+        public static List<string> GetMovieTvShowGenres()
+        {
+            List<string> genres = new List<string>();
+            try
+            {
+                string query = "SELECT MovieTvShowGenre FROM MovieTvShowGenreTable";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        genres.Add(reader["MovieTvShowGenre"].ToString());
+                    }
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while retrieving genres: " + ex.Message);
+            }
+            return genres;
+        }
 
-        public static void InsertJournalText(string journalText)
+        public static void InsertJournalText(DateTime date, string journalText)
         {
             try
             {
-                string queryCheck = "SELECT COUNT(*) FROM JournalTable WHERE CAST(Date AS DATE) = CAST(GETDATE() AS DATE) AND UserId = @UserId";
+                string queryCheck = "SELECT COUNT(*) FROM JournalTable WHERE CAST(Date AS DATE) = @Date AND UserId = @UserId";
                 using (SqlCommand commandCheck = new SqlCommand(queryCheck, connection))
                 {
+                    commandCheck.Parameters.AddWithValue("@Date", date);
                     commandCheck.Parameters.AddWithValue("@UserId", MainAppForm._userId);
                     int count = Convert.ToInt32(commandCheck.ExecuteScalar());
 
                     if (count > 0)
                     {
-                        string queryUpdate = "UPDATE JournalTable SET JournalText = @JournalText WHERE CAST(Date AS DATE) = CAST(GETDATE() AS DATE) AND UserId = @UserId";
+                        string queryUpdate = "UPDATE JournalTable SET JournalText = @JournalText WHERE CAST(Date AS DATE) = @Date AND UserId = @UserId";
                         using (SqlCommand commandUpdate = new SqlCommand(queryUpdate, connection))
                         {
                             commandUpdate.Parameters.AddWithValue("@JournalText", journalText);
+                            commandUpdate.Parameters.AddWithValue("@Date", date);
                             commandUpdate.Parameters.AddWithValue("@UserId", MainAppForm._userId);
                             int result = commandUpdate.ExecuteNonQuery();
-                            if (result > 0)
-                            {
-                                
-                            }
-                            else
+                            if (result <= 0)
                             {
                                 MessageBox.Show("Update failed.");
                             }
@@ -214,14 +234,10 @@ namespace DesktopJournelApp
                         using (SqlCommand commandInsert = new SqlCommand(queryInsert, connection))
                         {
                             commandInsert.Parameters.AddWithValue("@JournalText", journalText);
-                            commandInsert.Parameters.AddWithValue("@Date", DateTime.Now);
+                            commandInsert.Parameters.AddWithValue("@Date", date);
                             commandInsert.Parameters.AddWithValue("@UserId", MainAppForm._userId);
                             int result = commandInsert.ExecuteNonQuery();
-                            if (result > 0)
-                            {
-                                
-                            }
-                            else
+                            if (result <= 0)
                             {
                                 MessageBox.Show("Insertion failed.");
                             }
@@ -505,6 +521,28 @@ namespace DesktopJournelApp
             }
         }
 
+        public static List<string> GetBookGenres()
+        {
+            List<string> genres = new List<string>();
+            try
+            {
+                string query = "SELECT BookGenre FROM BookGenreTable";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        genres.Add(reader["BookGenre"].ToString());
+                    }
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while retrieving book genres: " + ex.Message);
+            }
+            return genres;
+        }
 
         public static void InsertReadingList(string name, string author, string state, int rate, string comment, string genre, int pageCount)
         {
@@ -747,6 +785,8 @@ namespace DesktopJournelApp
         {
             try
             {
+                startDate = startDate.Date;
+                endDate = endDate.Date.AddDays(1).AddTicks(-1); // End of the day
                 string query = "SELECT * FROM TaskPlannerTable WHERE Deadline BETWEEN @StartDate AND @EndDate AND UserId = @UserId";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -836,6 +876,214 @@ namespace DesktopJournelApp
         }
 
 
+        public static void UpdateUserName(int userId, string newUsername)
+        {
+            try
+            {
+                // Check if the new username is already taken
+                if (CheckUsernameExists(newUsername))
+                {
+                    MessageBox.Show("The username is already taken. Please choose a different username.");
+                    return;
+                }
+
+                string query = "UPDATE UsersTable SET UserName = @NewUsername WHERE Id = @UserId";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@NewUsername", newUsername);
+                    command.Parameters.AddWithValue("@UserId", userId);
+                    int result = command.ExecuteNonQuery();
+                    if (result <= 0)
+                    {
+                        MessageBox.Show("Failed to update username.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while updating username: " + ex.Message);
+            }
+        }
+
+        public static void UpdateUserPassword(string username, string newPassword)
+        {
+            try
+            {
+                string salt = GetSalt(username); // Use GetSalt method with username
+                string hashedPassword = Security.HashPassword(newPassword, salt);
+                string query = "UPDATE UsersTable SET Password = @NewPassword WHERE UserName = @Username";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@NewPassword", hashedPassword);
+                    command.Parameters.AddWithValue("@Username", username);
+                    int result = command.ExecuteNonQuery();
+                    if (result <= 0)
+                    {
+                        MessageBox.Show("Failed to update password.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while updating password: " + ex.Message);
+            }
+        }
+
+        public static void UpdateUserCity(int userId, string newCity)
+        {
+            try
+            {
+                string query = "UPDATE UsersTable SET Location = @NewCity WHERE Id = @UserId";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@NewCity", newCity);
+                    command.Parameters.AddWithValue("@UserId", userId);
+                    int result = command.ExecuteNonQuery();
+                    if (result <= 0)
+                    {
+                        MessageBox.Show("Failed to update city.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while updating city: " + ex.Message);
+            }
+        }
+        public static void AddMovieGenre(string genre)
+        {
+
+            try
+            {
+                if (!CheckMovieGenreExists(genre))
+                {
+                    string query = "INSERT INTO MovieTvShowGenreTable (MovieTvShowGenre) VALUES (@Genre)";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Genre", genre);
+                        int result = command.ExecuteNonQuery();
+                        if (result <= 0)
+                        {
+                            MessageBox.Show("Failed to insert genre.");
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Genre already exists.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while inserting movie/tv show genre: " + ex.Message);
+            }
+        }
+
+        private static bool CheckMovieGenreExists(string genre)
+        {
+            try
+            {
+                string query = "SELECT COUNT(1) FROM MovieTvShowGenreTable WHERE MovieTvShowGenre = @Genre";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Genre", genre);
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    return count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while checking if movie/tv show genre exists: " + ex.Message);
+                return false;
+            }
+        }
+        public static void AddBookGenre(string genre)
+        {
+            try
+            {
+                if (!CheckBookGenreExists(genre))
+                {
+                    string query = "INSERT INTO BookGenreTable (BookGenre) VALUES (@Genre)";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Genre", genre);
+                        int result = command.ExecuteNonQuery();
+                        if (result <= 0)
+                        {
+                            MessageBox.Show("Failed to insert genre.");
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Genre already exists.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while inserting book genre: " + ex.Message);
+            }
+        }
+        private static bool CheckBookGenreExists(string genre)
+        {
+            try
+            {
+                string query = "SELECT COUNT(1) FROM BookGenreTable WHERE BookGenre = @Genre";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Genre", genre);
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    return count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while checking if book genre exists: " + ex.Message);
+                return false;
+            }
+        }
+
+        public static void DeleteMovieGenre(string genre)
+        {
+            try
+            {
+                string query = "DELETE FROM MovieTvShowGenreTable WHERE MovieTvShowGenre = @Genre";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Genre", genre);
+                    int result = command.ExecuteNonQuery();
+                    if (result <= 0)
+                    {
+                        MessageBox.Show("Failed to delete genre.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while deleting movie/tv show genre: " + ex.Message);
+            }
+        }
+
+        public static void DeleteBookGenre(string genre)
+        {
+            try
+            {
+                string query = "DELETE FROM BookGenreTable WHERE BookGenre = @Genre";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Genre", genre);
+                    int result = command.ExecuteNonQuery();
+                    if (result <= 0)
+                    {
+                        MessageBox.Show("Failed to delete genre.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while deleting book genre: " + ex.Message);
+            }
+        }
 
     }
 

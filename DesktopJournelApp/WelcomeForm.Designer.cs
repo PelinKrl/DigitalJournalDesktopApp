@@ -52,34 +52,32 @@
             // 
             this.welcomeLabel.AutoSize = true;
             this.welcomeLabel.BackColor = System.Drawing.Color.Transparent;
-            this.welcomeLabel.Font = new System.Drawing.Font("Copperplate Gothic Bold", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.welcomeLabel.Font = new System.Drawing.Font("Courier New", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcomeLabel.Location = new System.Drawing.Point(116, 145);
             this.welcomeLabel.Name = "welcomeLabel";
-            this.welcomeLabel.Size = new System.Drawing.Size(841, 48);
+            this.welcomeLabel.Size = new System.Drawing.Size(828, 49);
             this.welcomeLabel.TabIndex = 0;
             this.welcomeLabel.Text = "Welcome to Your Digital Journal";
-            
             // 
             // whoAreYouLabel
             // 
             this.whoAreYouLabel.AutoSize = true;
             this.whoAreYouLabel.BackColor = System.Drawing.Color.Transparent;
-            this.whoAreYouLabel.Font = new System.Drawing.Font("Copperplate Gothic Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.whoAreYouLabel.Location = new System.Drawing.Point(406, 244);
+            this.whoAreYouLabel.Font = new System.Drawing.Font("Courier New", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.whoAreYouLabel.Location = new System.Drawing.Point(400, 218);
             this.whoAreYouLabel.Name = "whoAreYouLabel";
-            this.whoAreYouLabel.Size = new System.Drawing.Size(242, 32);
+            this.whoAreYouLabel.Size = new System.Drawing.Size(281, 39);
             this.whoAreYouLabel.TabIndex = 1;
             this.whoAreYouLabel.Text = "Who Are You?";
-            
             // 
             // userNameLabel
             // 
             this.userNameLabel.AutoSize = true;
             this.userNameLabel.BackColor = System.Drawing.Color.Transparent;
-            this.userNameLabel.Font = new System.Drawing.Font("Copperplate Gothic Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNameLabel.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userNameLabel.Location = new System.Drawing.Point(26, 63);
             this.userNameLabel.Name = "userNameLabel";
-            this.userNameLabel.Size = new System.Drawing.Size(116, 21);
+            this.userNameLabel.Size = new System.Drawing.Size(106, 22);
             this.userNameLabel.TabIndex = 2;
             this.userNameLabel.Text = "Username";
             // 
@@ -87,39 +85,38 @@
             // 
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.BackColor = System.Drawing.Color.Transparent;
-            this.passwordLabel.Font = new System.Drawing.Font("Copperplate Gothic Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordLabel.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordLabel.Location = new System.Drawing.Point(26, 149);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(120, 21);
+            this.passwordLabel.Size = new System.Drawing.Size(106, 22);
             this.passwordLabel.TabIndex = 3;
             this.passwordLabel.Text = "Password";
             // 
             // userName_textBox
             // 
-            this.userName_textBox.Font = new System.Drawing.Font("Footlight MT Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userName_textBox.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userName_textBox.Location = new System.Drawing.Point(203, 59);
             this.userName_textBox.Name = "userName_textBox";
-            this.userName_textBox.Size = new System.Drawing.Size(343, 25);
+            this.userName_textBox.Size = new System.Drawing.Size(343, 30);
             this.userName_textBox.TabIndex = 4;
             // 
             // password_textBox
             // 
-            this.password_textBox.Font = new System.Drawing.Font("Footlight MT Light", 10.2F);
+            this.password_textBox.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password_textBox.Location = new System.Drawing.Point(203, 149);
             this.password_textBox.Name = "password_textBox";
             this.password_textBox.PasswordChar = '*';
-            this.password_textBox.Size = new System.Drawing.Size(343, 25);
+            this.password_textBox.Size = new System.Drawing.Size(343, 30);
             this.password_textBox.TabIndex = 5;
-            
             // 
             // showPassword_checkBox
             // 
             this.showPassword_checkBox.AutoSize = true;
             this.showPassword_checkBox.BackColor = System.Drawing.Color.Transparent;
-            this.showPassword_checkBox.Font = new System.Drawing.Font("Footlight MT Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showPassword_checkBox.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.showPassword_checkBox.Location = new System.Drawing.Point(408, 201);
             this.showPassword_checkBox.Name = "showPassword_checkBox";
-            this.showPassword_checkBox.Size = new System.Drawing.Size(138, 23);
+            this.showPassword_checkBox.Size = new System.Drawing.Size(161, 24);
             this.showPassword_checkBox.TabIndex = 6;
             this.showPassword_checkBox.Text = "Show Password";
             this.showPassword_checkBox.UseVisualStyleBackColor = false;
@@ -127,18 +124,18 @@
             // 
             // logIn_button
             // 
-            this.logIn_button.Font = new System.Drawing.Font("Footlight MT Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logIn_button.Location = new System.Drawing.Point(408, 251);
+            this.logIn_button.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logIn_button.Location = new System.Drawing.Point(398, 246);
             this.logIn_button.Name = "logIn_button";
-            this.logIn_button.Size = new System.Drawing.Size(152, 44);
+            this.logIn_button.Size = new System.Drawing.Size(162, 44);
             this.logIn_button.TabIndex = 7;
             this.logIn_button.Text = "Log In";
             this.logIn_button.Click += new System.EventHandler(this.logIn_button_Click);
             // 
             // signUp_button
             // 
-            this.signUp_button.Font = new System.Drawing.Font("Footlight MT Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signUp_button.Location = new System.Drawing.Point(30, 251);
+            this.signUp_button.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signUp_button.Location = new System.Drawing.Point(30, 246);
             this.signUp_button.Name = "signUp_button";
             this.signUp_button.Size = new System.Drawing.Size(162, 44);
             this.signUp_button.TabIndex = 8;
@@ -160,7 +157,6 @@
             this.logIn_Panel.Name = "logIn_Panel";
             this.logIn_Panel.Size = new System.Drawing.Size(577, 303);
             this.logIn_Panel.TabIndex = 9;
-            
             // 
             // pictureBox2
             // 
