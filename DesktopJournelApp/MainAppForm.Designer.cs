@@ -55,11 +55,10 @@
             this.Today___label = new System.Windows.Forms.Label();
             this.WeeklyGraphPanel = new System.Windows.Forms.Panel();
             this.WeeklyHabbitGraphLabel = new System.Windows.Forms.Label();
-            this.MonthlyGraphPanel = new System.Windows.Forms.Panel();
-            this.MontlhlyHabbitGraphLabel = new System.Windows.Forms.Label();
             this.MainAreaPanel = new System.Windows.Forms.Panel();
             this.DefaultBannerPictureBox = new System.Windows.Forms.PictureBox();
             this.SettingPictureBox = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.MarsPictureBox)).BeginInit();
             this.JournalPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JournalPictureBox)).BeginInit();
@@ -75,9 +74,9 @@
             this.ReminderOfTodayPanel.SuspendLayout();
             this.TodaysDatePanel.SuspendLayout();
             this.WeeklyGraphPanel.SuspendLayout();
-            this.MonthlyGraphPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DefaultBannerPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SettingPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MarsPictureBox
@@ -98,7 +97,7 @@
             this.JournalPanel.Controls.Add(this.JournalPictureBox);
             this.JournalPanel.Controls.Add(this.JournalLabel);
             this.JournalPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.JournalPanel.Location = new System.Drawing.Point(205, 12);
+            this.JournalPanel.Location = new System.Drawing.Point(189, 12);
             this.JournalPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.JournalPanel.Name = "JournalPanel";
             this.JournalPanel.Size = new System.Drawing.Size(179, 84);
@@ -134,7 +133,7 @@
             this.WeatherAppPanel.Controls.Add(this.WeatherPictureBox);
             this.WeatherAppPanel.Controls.Add(this.WeatherAppLabel);
             this.WeatherAppPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.WeatherAppPanel.Location = new System.Drawing.Point(419, 12);
+            this.WeatherAppPanel.Location = new System.Drawing.Point(393, 12);
             this.WeatherAppPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WeatherAppPanel.Name = "WeatherAppPanel";
             this.WeatherAppPanel.Size = new System.Drawing.Size(207, 84);
@@ -170,7 +169,7 @@
             this.WatchListPanel.Controls.Add(this.WatchListPictureBox);
             this.WatchListPanel.Controls.Add(this.WatchListLabel);
             this.WatchListPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.WatchListPanel.Location = new System.Drawing.Point(653, 12);
+            this.WatchListPanel.Location = new System.Drawing.Point(627, 12);
             this.WatchListPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WatchListPanel.Name = "WatchListPanel";
             this.WatchListPanel.Size = new System.Drawing.Size(208, 84);
@@ -206,7 +205,7 @@
             this.ReadingListPanel.Controls.Add(this.readingListPictureBox);
             this.ReadingListPanel.Controls.Add(this.ReadlingListLabel);
             this.ReadingListPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ReadingListPanel.Location = new System.Drawing.Point(879, 12);
+            this.ReadingListPanel.Location = new System.Drawing.Point(862, 12);
             this.ReadingListPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ReadingListPanel.Name = "ReadingListPanel";
             this.ReadingListPanel.Size = new System.Drawing.Size(227, 84);
@@ -242,7 +241,7 @@
             this.TaskPlannerPanel.Controls.Add(this.TaskPlannerPictureBox);
             this.TaskPlannerPanel.Controls.Add(this.TaskPlannerLabel);
             this.TaskPlannerPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.TaskPlannerPanel.Location = new System.Drawing.Point(1121, 12);
+            this.TaskPlannerPanel.Location = new System.Drawing.Point(1115, 12);
             this.TaskPlannerPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TaskPlannerPanel.Name = "TaskPlannerPanel";
             this.TaskPlannerPanel.Size = new System.Drawing.Size(221, 84);
@@ -300,7 +299,7 @@
             this.ReminderOfTodayPanel.Location = new System.Drawing.Point(3, 342);
             this.ReminderOfTodayPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ReminderOfTodayPanel.Name = "ReminderOfTodayPanel";
-            this.ReminderOfTodayPanel.Size = new System.Drawing.Size(192, 219);
+            this.ReminderOfTodayPanel.Size = new System.Drawing.Size(192, 151);
             this.ReminderOfTodayPanel.TabIndex = 9;
             // 
             // todaysReminderLabel
@@ -321,7 +320,7 @@
             this.TodaysReminderRichTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TodaysReminderRichTextBox.Name = "TodaysReminderRichTextBox";
             this.TodaysReminderRichTextBox.ReadOnly = true;
-            this.TodaysReminderRichTextBox.Size = new System.Drawing.Size(189, 187);
+            this.TodaysReminderRichTextBox.Size = new System.Drawing.Size(192, 116);
             this.TodaysReminderRichTextBox.TabIndex = 12;
             this.TodaysReminderRichTextBox.Text = "";
             // 
@@ -360,45 +359,26 @@
             // WeeklyGraphPanel
             // 
             this.WeeklyGraphPanel.BackColor = System.Drawing.Color.Transparent;
+            this.WeeklyGraphPanel.Controls.Add(this.pictureBox1);
             this.WeeklyGraphPanel.Controls.Add(this.WeeklyHabbitGraphLabel);
             this.WeeklyGraphPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.WeeklyGraphPanel.Location = new System.Drawing.Point(1367, 12);
+            this.WeeklyGraphPanel.Location = new System.Drawing.Point(1356, 12);
             this.WeeklyGraphPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WeeklyGraphPanel.Name = "WeeklyGraphPanel";
-            this.WeeklyGraphPanel.Size = new System.Drawing.Size(187, 84);
+            this.WeeklyGraphPanel.Size = new System.Drawing.Size(239, 84);
             this.WeeklyGraphPanel.TabIndex = 12;
+            this.WeeklyGraphPanel.Click += new System.EventHandler(this.WeeklyHabbitGraphLabel_Click);
             // 
             // WeeklyHabbitGraphLabel
             // 
             this.WeeklyHabbitGraphLabel.AutoSize = true;
             this.WeeklyHabbitGraphLabel.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WeeklyHabbitGraphLabel.Location = new System.Drawing.Point(8, 17);
+            this.WeeklyHabbitGraphLabel.Location = new System.Drawing.Point(72, 29);
             this.WeeklyHabbitGraphLabel.Name = "WeeklyHabbitGraphLabel";
-            this.WeeklyHabbitGraphLabel.Size = new System.Drawing.Size(178, 46);
+            this.WeeklyHabbitGraphLabel.Size = new System.Drawing.Size(154, 23);
             this.WeeklyHabbitGraphLabel.TabIndex = 0;
-            this.WeeklyHabbitGraphLabel.Text = "Weekly Habbit \r\n    Graph";
+            this.WeeklyHabbitGraphLabel.Text = "Habbit Graph";
             this.WeeklyHabbitGraphLabel.Click += new System.EventHandler(this.WeeklyHabbitGraphLabel_Click);
-            // 
-            // MonthlyGraphPanel
-            // 
-            this.MonthlyGraphPanel.BackColor = System.Drawing.Color.Transparent;
-            this.MonthlyGraphPanel.Controls.Add(this.MontlhlyHabbitGraphLabel);
-            this.MonthlyGraphPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MonthlyGraphPanel.Location = new System.Drawing.Point(1575, 12);
-            this.MonthlyGraphPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MonthlyGraphPanel.Name = "MonthlyGraphPanel";
-            this.MonthlyGraphPanel.Size = new System.Drawing.Size(206, 84);
-            this.MonthlyGraphPanel.TabIndex = 13;
-            // 
-            // MontlhlyHabbitGraphLabel
-            // 
-            this.MontlhlyHabbitGraphLabel.AutoSize = true;
-            this.MontlhlyHabbitGraphLabel.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MontlhlyHabbitGraphLabel.Location = new System.Drawing.Point(13, 14);
-            this.MontlhlyHabbitGraphLabel.Name = "MontlhlyHabbitGraphLabel";
-            this.MontlhlyHabbitGraphLabel.Size = new System.Drawing.Size(190, 46);
-            this.MontlhlyHabbitGraphLabel.TabIndex = 0;
-            this.MontlhlyHabbitGraphLabel.Text = "Monthly Habbit \r\n     Graph";
             // 
             // MainAreaPanel
             // 
@@ -406,9 +386,10 @@
             this.MainAreaPanel.Location = new System.Drawing.Point(205, 139);
             this.MainAreaPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MainAreaPanel.Name = "MainAreaPanel";
-            this.MainAreaPanel.Size = new System.Drawing.Size(1821, 768);
+            this.MainAreaPanel.Size = new System.Drawing.Size(1832, 768);
             this.MainAreaPanel.TabIndex = 14;
             this.MainAreaPanel.Visible = false;
+            this.MainAreaPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainAreaPanel_Paint);
             // 
             // DefaultBannerPictureBox
             // 
@@ -434,6 +415,18 @@
             this.SettingPictureBox.TabStop = false;
             this.SettingPictureBox.Click += new System.EventHandler(this.SettingPictureBox_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(15, 14);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 46);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.WeeklyHabbitGraphLabel_Click);
+            // 
             // MainAppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -442,7 +435,6 @@
             this.ClientSize = new System.Drawing.Size(1924, 949);
             this.Controls.Add(this.SettingPictureBox);
             this.Controls.Add(this.MainAreaPanel);
-            this.Controls.Add(this.MonthlyGraphPanel);
             this.Controls.Add(this.WeeklyGraphPanel);
             this.Controls.Add(this.TodaysDatePanel);
             this.Controls.Add(this.ReminderOfTodayPanel);
@@ -484,10 +476,9 @@
             this.TodaysDatePanel.PerformLayout();
             this.WeeklyGraphPanel.ResumeLayout(false);
             this.WeeklyGraphPanel.PerformLayout();
-            this.MonthlyGraphPanel.ResumeLayout(false);
-            this.MonthlyGraphPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DefaultBannerPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SettingPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -519,11 +510,10 @@
         private System.Windows.Forms.PictureBox TaskPlannerPictureBox;
         private System.Windows.Forms.Panel WeeklyGraphPanel;
         private System.Windows.Forms.Label WeeklyHabbitGraphLabel;
-        private System.Windows.Forms.Panel MonthlyGraphPanel;
-        private System.Windows.Forms.Label MontlhlyHabbitGraphLabel;
         private System.Windows.Forms.Panel MainAreaPanel;
         private System.Windows.Forms.RichTextBox TodaysReminderRichTextBox;
         private System.Windows.Forms.PictureBox DefaultBannerPictureBox;
         private System.Windows.Forms.PictureBox SettingPictureBox;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

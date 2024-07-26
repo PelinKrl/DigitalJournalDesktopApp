@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,6 +59,12 @@
     </Compile>
     <Compile Include="ChangeProfileValuesUserControl.Designer.cs">
       <DependentUpon>ChangeProfileValuesUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphsPageUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GraphsPageUserControl.Designer.cs">
+      <DependentUpon>GraphsPageUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="SettingsForm.cs">
       <SubType>Form</SubType>
@@ -140,6 +147,9 @@
     <EmbeddedResource Include="ChangeProfileValuesUserControl.resx">
       <DependentUpon>ChangeProfileValuesUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GraphsPageUserControl.resx">
+      <DependentUpon>GraphsPageUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +223,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WeatherApp\images\clear.png" />
+    <Content Include="WeatherApp\images\clouds.png" />
+    <Content Include="WeatherApp\images\drizzle.png" />
+    <Content Include="WeatherApp\images\humidity.png" />
+    <Content Include="WeatherApp\images\mist.png" />
+    <Content Include="WeatherApp\images\rain.png" />
+    <Content Include="WeatherApp\images\search.png" />
+    <Content Include="WeatherApp\images\snow.png" />
+    <Content Include="WeatherApp\images\wind.png" />
+    <Content Include="WeatherApp\index.html" />
+    <Content Include="WeatherApp\style.css" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

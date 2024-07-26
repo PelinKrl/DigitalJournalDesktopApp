@@ -44,8 +44,30 @@ namespace DesktopJournelApp
             DateTime selectedDate = JournalDateTimePicker.Value.Date;
 
             string journalText = SQL.GetJournalTextByDate(selectedDate);
-
             JournalRichTextBox.Text = journalText;
+
+            Dictionary<string, object> trackBehavior = SQL.GetTrackBehaviorByDate(selectedDate);
+
+            if (trackBehavior != null)
+            {
+                MoodscomboBox.Text = trackBehavior["Mood"].ToString();
+                CupsOfWaterTextBox.Text = trackBehavior["WaterCount"].ToString();
+                BooksTextBox.Text = trackBehavior["PageCount"].ToString();
+                SleepTextBox.Text = trackBehavior["HoursOfSleep"].ToString();
+                WorkTextBox.Text = trackBehavior["HoursOfWork"].ToString();
+                MovieTextBox.Text = trackBehavior["MinutesOfWatch"].ToString();
+                SporTextBox.Text = trackBehavior["MinutesOfExercise"].ToString();
+            }
+            else
+            {
+                MoodscomboBox.Text = string.Empty;
+                CupsOfWaterTextBox.Text = string.Empty;
+                BooksTextBox.Text = string.Empty;
+                SleepTextBox.Text = string.Empty;
+                WorkTextBox.Text = string.Empty;
+                MovieTextBox.Text = string.Empty;
+                SporTextBox.Text = string.Empty;
+            }
         }
 
         private void TrackSaveButton_Click(object sender, EventArgs e)
@@ -58,7 +80,9 @@ namespace DesktopJournelApp
             int watch = Convert.ToInt32(MovieTextBox.Text);
             int spor = Convert.ToInt32(SporTextBox.Text);
 
-            SQL.InsertTrackBehaviour(mood, water, pages, work, spor, watch, sleep);
+            DateTime selectedDate = JournalDateTimePicker.Value.Date;
+
+            SQL.InsertTrackBehaviour(selectedDate, mood, water, pages, work, spor, watch, sleep);
 
             DailyTracksPanel.Visible = false;
         }

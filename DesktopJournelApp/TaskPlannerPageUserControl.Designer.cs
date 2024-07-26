@@ -35,16 +35,20 @@
             this.TPUpdateButton = new System.Windows.Forms.Button();
             this.TPSaveButton = new System.Windows.Forms.Button();
             this.WatchListPMPanel = new System.Windows.Forms.Panel();
+            this.ToDoPanel = new System.Windows.Forms.Panel();
+            this.AddToDoButton = new System.Windows.Forms.Button();
+            this.ToDoTextBox = new System.Windows.Forms.TextBox();
+            this.ToDoListLabel = new System.Windows.Forms.Label();
             this.TPPrioCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.TPListStateButton = new System.Windows.Forms.Button();
             this.TPStateFilterComboBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.TPFilterByPrioButton = new System.Windows.Forms.Button();
             this.TPPriorityButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.TPCatGifPictureBox = new System.Windows.Forms.PictureBox();
             this.TPdataGridView = new System.Windows.Forms.DataGridView();
             this.TaskPlannerTitleLabel = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.TPMenuPanel = new System.Windows.Forms.Panel();
             this.TPPrioComboBox = new System.Windows.Forms.ComboBox();
             this.TPTaskTagComboBox = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -65,18 +69,18 @@
             this.TPNameTextBox = new System.Windows.Forms.TextBox();
             this.MovieTvSName = new System.Windows.Forms.Label();
             this.WatchListPMPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TPCatGifPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TPdataGridView)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.TPMenuPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // TPListTasksButton
             // 
             this.TPListTasksButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TPListTasksButton.Location = new System.Drawing.Point(789, 534);
+            this.TPListTasksButton.Location = new System.Drawing.Point(472, 442);
             this.TPListTasksButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TPListTasksButton.Name = "TPListTasksButton";
-            this.TPListTasksButton.Size = new System.Drawing.Size(127, 55);
+            this.TPListTasksButton.Size = new System.Drawing.Size(117, 55);
             this.TPListTasksButton.TabIndex = 5;
             this.TPListTasksButton.Text = "List Tasks";
             this.TPListTasksButton.UseVisualStyleBackColor = true;
@@ -107,10 +111,10 @@
             // TPDeleteButton
             // 
             this.TPDeleteButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TPDeleteButton.Location = new System.Drawing.Point(475, 528);
+            this.TPDeleteButton.Location = new System.Drawing.Point(8, 371);
             this.TPDeleteButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TPDeleteButton.Name = "TPDeleteButton";
-            this.TPDeleteButton.Size = new System.Drawing.Size(124, 55);
+            this.TPDeleteButton.Size = new System.Drawing.Size(124, 44);
             this.TPDeleteButton.TabIndex = 20;
             this.TPDeleteButton.Text = "Delete";
             this.TPDeleteButton.UseVisualStyleBackColor = true;
@@ -119,10 +123,10 @@
             // TPUpdateButton
             // 
             this.TPUpdateButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TPUpdateButton.Location = new System.Drawing.Point(331, 528);
+            this.TPUpdateButton.Location = new System.Drawing.Point(353, 371);
             this.TPUpdateButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TPUpdateButton.Name = "TPUpdateButton";
-            this.TPUpdateButton.Size = new System.Drawing.Size(124, 55);
+            this.TPUpdateButton.Size = new System.Drawing.Size(105, 44);
             this.TPUpdateButton.TabIndex = 19;
             this.TPUpdateButton.Text = "Update";
             this.TPUpdateButton.UseVisualStyleBackColor = true;
@@ -131,10 +135,10 @@
             // TPSaveButton
             // 
             this.TPSaveButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TPSaveButton.Location = new System.Drawing.Point(624, 528);
+            this.TPSaveButton.Location = new System.Drawing.Point(472, 371);
             this.TPSaveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TPSaveButton.Name = "TPSaveButton";
-            this.TPSaveButton.Size = new System.Drawing.Size(124, 55);
+            this.TPSaveButton.Size = new System.Drawing.Size(117, 44);
             this.TPSaveButton.TabIndex = 16;
             this.TPSaveButton.Text = "Save";
             this.TPSaveButton.UseVisualStyleBackColor = true;
@@ -144,22 +148,61 @@
             // 
             this.WatchListPMPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.WatchListPMPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.WatchListPMPanel.Controls.Add(this.ToDoPanel);
+            this.WatchListPMPanel.Controls.Add(this.AddToDoButton);
+            this.WatchListPMPanel.Controls.Add(this.ToDoTextBox);
+            this.WatchListPMPanel.Controls.Add(this.ToDoListLabel);
             this.WatchListPMPanel.Controls.Add(this.TPPrioCheckedListBox);
             this.WatchListPMPanel.Controls.Add(this.TPListStateButton);
             this.WatchListPMPanel.Controls.Add(this.TPStateFilterComboBox);
             this.WatchListPMPanel.Controls.Add(this.label7);
             this.WatchListPMPanel.Controls.Add(this.TPFilterByPrioButton);
             this.WatchListPMPanel.Controls.Add(this.TPPriorityButton);
-            this.WatchListPMPanel.Controls.Add(this.pictureBox1);
+            this.WatchListPMPanel.Controls.Add(this.TPCatGifPictureBox);
             this.WatchListPMPanel.Controls.Add(this.TPdataGridView);
             this.WatchListPMPanel.Controls.Add(this.TaskPlannerTitleLabel);
-            this.WatchListPMPanel.Controls.Add(this.panel1);
-            this.WatchListPMPanel.Controls.Add(this.TPListTasksButton);
+            this.WatchListPMPanel.Controls.Add(this.TPMenuPanel);
             this.WatchListPMPanel.Location = new System.Drawing.Point(3, 2);
             this.WatchListPMPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WatchListPMPanel.Name = "WatchListPMPanel";
-            this.WatchListPMPanel.Size = new System.Drawing.Size(1824, 682);
+            this.WatchListPMPanel.Size = new System.Drawing.Size(1824, 729);
             this.WatchListPMPanel.TabIndex = 1;
+            // 
+            // ToDoPanel
+            // 
+            this.ToDoPanel.Location = new System.Drawing.Point(1400, 120);
+            this.ToDoPanel.Name = "ToDoPanel";
+            this.ToDoPanel.Size = new System.Drawing.Size(403, 436);
+            this.ToDoPanel.TabIndex = 34;
+            // 
+            // AddToDoButton
+            // 
+            this.AddToDoButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddToDoButton.Location = new System.Drawing.Point(1694, 64);
+            this.AddToDoButton.Name = "AddToDoButton";
+            this.AddToDoButton.Size = new System.Drawing.Size(83, 30);
+            this.AddToDoButton.TabIndex = 33;
+            this.AddToDoButton.Text = "Add";
+            this.AddToDoButton.UseVisualStyleBackColor = true;
+            this.AddToDoButton.Click += new System.EventHandler(this.AddToDoButton_Click);
+            // 
+            // ToDoTextBox
+            // 
+            this.ToDoTextBox.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToDoTextBox.Location = new System.Drawing.Point(1397, 64);
+            this.ToDoTextBox.Name = "ToDoTextBox";
+            this.ToDoTextBox.Size = new System.Drawing.Size(273, 30);
+            this.ToDoTextBox.TabIndex = 32;
+            // 
+            // ToDoListLabel
+            // 
+            this.ToDoListLabel.AutoSize = true;
+            this.ToDoListLabel.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToDoListLabel.Location = new System.Drawing.Point(1391, 11);
+            this.ToDoListLabel.Name = "ToDoListLabel";
+            this.ToDoListLabel.Size = new System.Drawing.Size(184, 31);
+            this.ToDoListLabel.TabIndex = 31;
+            this.ToDoListLabel.Text = "To Do List";
             // 
             // TPPrioCheckedListBox
             // 
@@ -173,7 +216,7 @@
             "Very Important",
             "ASAP",
             "Matter of Life or Death "});
-            this.TPPrioCheckedListBox.Location = new System.Drawing.Point(1586, 53);
+            this.TPPrioCheckedListBox.Location = new System.Drawing.Point(1146, 55);
             this.TPPrioCheckedListBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TPPrioCheckedListBox.Name = "TPPrioCheckedListBox";
             this.TPPrioCheckedListBox.Size = new System.Drawing.Size(216, 106);
@@ -183,7 +226,7 @@
             // TPListStateButton
             // 
             this.TPListStateButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TPListStateButton.Location = new System.Drawing.Point(1155, 15);
+            this.TPListStateButton.Location = new System.Drawing.Point(977, 13);
             this.TPListStateButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TPListStateButton.Name = "TPListStateButton";
             this.TPListStateButton.Size = new System.Drawing.Size(115, 31);
@@ -200,7 +243,7 @@
             this.TPStateFilterComboBox.Items.AddRange(new object[] {
             "Not Done ",
             "Done"});
-            this.TPStateFilterComboBox.Location = new System.Drawing.Point(968, 16);
+            this.TPStateFilterComboBox.Location = new System.Drawing.Point(779, 16);
             this.TPStateFilterComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TPStateFilterComboBox.Name = "TPStateFilterComboBox";
             this.TPStateFilterComboBox.Size = new System.Drawing.Size(171, 28);
@@ -210,7 +253,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(785, 19);
+            this.label7.Location = new System.Drawing.Point(607, 19);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(154, 22);
             this.label7.TabIndex = 27;
@@ -219,7 +262,7 @@
             // TPFilterByPrioButton
             // 
             this.TPFilterByPrioButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TPFilterByPrioButton.Location = new System.Drawing.Point(1489, 10);
+            this.TPFilterByPrioButton.Location = new System.Drawing.Point(1137, 9);
             this.TPFilterByPrioButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TPFilterByPrioButton.Name = "TPFilterByPrioButton";
             this.TPFilterByPrioButton.Size = new System.Drawing.Size(91, 39);
@@ -231,26 +274,26 @@
             // TPPriorityButton
             // 
             this.TPPriorityButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TPPriorityButton.Location = new System.Drawing.Point(1586, 9);
+            this.TPPriorityButton.Location = new System.Drawing.Point(1234, 9);
             this.TPPriorityButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TPPriorityButton.Name = "TPPriorityButton";
-            this.TPPriorityButton.Size = new System.Drawing.Size(215, 39);
+            this.TPPriorityButton.Size = new System.Drawing.Size(128, 39);
             this.TPPriorityButton.TabIndex = 25;
             this.TPPriorityButton.Text = "Priority";
             this.TPPriorityButton.UseVisualStyleBackColor = true;
             this.TPPriorityButton.Click += new System.EventHandler(this.TPPriorityButton_Click);
             // 
-            // pictureBox1
+            // TPCatGifPictureBox
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1619, 517);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(184, 161);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
+            this.TPCatGifPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.TPCatGifPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("TPCatGifPictureBox.Image")));
+            this.TPCatGifPictureBox.Location = new System.Drawing.Point(1619, 562);
+            this.TPCatGifPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TPCatGifPictureBox.Name = "TPCatGifPictureBox";
+            this.TPCatGifPictureBox.Size = new System.Drawing.Size(184, 161);
+            this.TPCatGifPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.TPCatGifPictureBox.TabIndex = 19;
+            this.TPCatGifPictureBox.TabStop = false;
             // 
             // TPdataGridView
             // 
@@ -258,14 +301,15 @@
             this.TPdataGridView.AllowUserToDeleteRows = false;
             this.TPdataGridView.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.TPdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TPdataGridView.Location = new System.Drawing.Point(789, 53);
+            this.TPdataGridView.Location = new System.Drawing.Point(611, 55);
             this.TPdataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TPdataGridView.Name = "TPdataGridView";
             this.TPdataGridView.ReadOnly = true;
             this.TPdataGridView.RowHeadersWidth = 51;
             this.TPdataGridView.RowTemplate.Height = 24;
-            this.TPdataGridView.Size = new System.Drawing.Size(1013, 464);
+            this.TPdataGridView.Size = new System.Drawing.Size(751, 613);
             this.TPdataGridView.TabIndex = 2;
+            this.TPdataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.TPdataGridView_CellFormatting);
             this.TPdataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.TPdataGridView_RowHeaderMouseClick);
             // 
             // TaskPlannerTitleLabel
@@ -277,38 +321,38 @@
             this.TaskPlannerTitleLabel.Size = new System.Drawing.Size(257, 37);
             this.TaskPlannerTitleLabel.TabIndex = 1;
             this.TaskPlannerTitleLabel.Text = "Task Planner";
-            this.TaskPlannerTitleLabel.Click += new System.EventHandler(this.TaskPlannerTitleLabel_Click);
             // 
-            // panel1
+            // TPMenuPanel
             // 
-            this.panel1.Controls.Add(this.TPPrioComboBox);
-            this.panel1.Controls.Add(this.TPTaskTagComboBox);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.TPStateCheckBox);
-            this.panel1.Controls.Add(this.TPFilterByDatesButton);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.TPFinishDateTimePicker);
-            this.panel1.Controls.Add(this.TPStartDateTimePicker);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.TPDeadlineDateTimePicker);
-            this.panel1.Controls.Add(this.TPSearchComboBox);
-            this.panel1.Controls.Add(this.TPDeleteButton);
-            this.panel1.Controls.Add(this.TPUpdateButton);
-            this.panel1.Controls.Add(this.TPSaveButton);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.TPSearchTextBox);
-            this.panel1.Controls.Add(this.TPSearchButton);
-            this.panel1.Controls.Add(this.TPDescTextBox);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.TPNameTextBox);
-            this.panel1.Controls.Add(this.MovieTvSName);
-            this.panel1.Location = new System.Drawing.Point(3, 55);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(765, 601);
-            this.panel1.TabIndex = 0;
+            this.TPMenuPanel.Controls.Add(this.TPPrioComboBox);
+            this.TPMenuPanel.Controls.Add(this.TPTaskTagComboBox);
+            this.TPMenuPanel.Controls.Add(this.label8);
+            this.TPMenuPanel.Controls.Add(this.TPStateCheckBox);
+            this.TPMenuPanel.Controls.Add(this.TPFilterByDatesButton);
+            this.TPMenuPanel.Controls.Add(this.label6);
+            this.TPMenuPanel.Controls.Add(this.TPFinishDateTimePicker);
+            this.TPMenuPanel.Controls.Add(this.TPStartDateTimePicker);
+            this.TPMenuPanel.Controls.Add(this.label5);
+            this.TPMenuPanel.Controls.Add(this.label4);
+            this.TPMenuPanel.Controls.Add(this.TPDeadlineDateTimePicker);
+            this.TPMenuPanel.Controls.Add(this.TPSearchComboBox);
+            this.TPMenuPanel.Controls.Add(this.TPDeleteButton);
+            this.TPMenuPanel.Controls.Add(this.TPUpdateButton);
+            this.TPMenuPanel.Controls.Add(this.TPListTasksButton);
+            this.TPMenuPanel.Controls.Add(this.TPSaveButton);
+            this.TPMenuPanel.Controls.Add(this.label3);
+            this.TPMenuPanel.Controls.Add(this.label2);
+            this.TPMenuPanel.Controls.Add(this.TPSearchTextBox);
+            this.TPMenuPanel.Controls.Add(this.TPSearchButton);
+            this.TPMenuPanel.Controls.Add(this.TPDescTextBox);
+            this.TPMenuPanel.Controls.Add(this.label1);
+            this.TPMenuPanel.Controls.Add(this.TPNameTextBox);
+            this.TPMenuPanel.Controls.Add(this.MovieTvSName);
+            this.TPMenuPanel.Location = new System.Drawing.Point(3, 55);
+            this.TPMenuPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TPMenuPanel.Name = "TPMenuPanel";
+            this.TPMenuPanel.Size = new System.Drawing.Size(602, 668);
+            this.TPMenuPanel.TabIndex = 0;
             // 
             // TPPrioComboBox
             // 
@@ -343,7 +387,7 @@
             "Chores ",
             "Birthdays",
             "Plan"});
-            this.TPTaskTagComboBox.Location = new System.Drawing.Point(565, 196);
+            this.TPTaskTagComboBox.Location = new System.Drawing.Point(177, 298);
             this.TPTaskTagComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TPTaskTagComboBox.Name = "TPTaskTagComboBox";
             this.TPTaskTagComboBox.Size = new System.Drawing.Size(179, 28);
@@ -353,7 +397,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(447, 196);
+            this.label8.Location = new System.Drawing.Point(9, 304);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(106, 22);
             this.label8.TabIndex = 30;
@@ -363,7 +407,7 @@
             // 
             this.TPStateCheckBox.AutoSize = true;
             this.TPStateCheckBox.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TPStateCheckBox.Location = new System.Drawing.Point(665, 91);
+            this.TPStateCheckBox.Location = new System.Drawing.Point(484, 90);
             this.TPStateCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.TPStateCheckBox.Name = "TPStateCheckBox";
             this.TPStateCheckBox.Size = new System.Drawing.Size(80, 26);
@@ -374,7 +418,7 @@
             // TPFilterByDatesButton
             // 
             this.TPFilterByDatesButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TPFilterByDatesButton.Location = new System.Drawing.Point(270, 432);
+            this.TPFilterByDatesButton.Location = new System.Drawing.Point(261, 576);
             this.TPFilterByDatesButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TPFilterByDatesButton.Name = "TPFilterByDatesButton";
             this.TPFilterByDatesButton.Size = new System.Drawing.Size(124, 37);
@@ -387,7 +431,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 326);
+            this.label6.Location = new System.Drawing.Point(9, 457);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(190, 22);
             this.label6.TabIndex = 27;
@@ -397,7 +441,7 @@
             // 
             this.TPFinishDateTimePicker.CalendarFont = new System.Drawing.Font("Footlight MT Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TPFinishDateTimePicker.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TPFinishDateTimePicker.Location = new System.Drawing.Point(177, 401);
+            this.TPFinishDateTimePicker.Location = new System.Drawing.Point(168, 545);
             this.TPFinishDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TPFinishDateTimePicker.Name = "TPFinishDateTimePicker";
             this.TPFinishDateTimePicker.Size = new System.Drawing.Size(217, 27);
@@ -407,7 +451,7 @@
             // 
             this.TPStartDateTimePicker.CalendarFont = new System.Drawing.Font("Footlight MT Light", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TPStartDateTimePicker.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TPStartDateTimePicker.Location = new System.Drawing.Point(177, 362);
+            this.TPStartDateTimePicker.Location = new System.Drawing.Point(168, 496);
             this.TPStartDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TPStartDateTimePicker.Name = "TPStartDateTimePicker";
             this.TPStartDateTimePicker.Size = new System.Drawing.Size(217, 27);
@@ -417,7 +461,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(9, 401);
+            this.label5.Location = new System.Drawing.Point(9, 548);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(142, 22);
             this.label5.TabIndex = 24;
@@ -427,7 +471,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(9, 362);
+            this.label4.Location = new System.Drawing.Point(9, 501);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 22);
             this.label4.TabIndex = 23;
@@ -447,7 +491,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 245);
+            this.label3.Location = new System.Drawing.Point(9, 250);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 22);
             this.label3.TabIndex = 11;
@@ -466,16 +510,16 @@
             // TPSearchTextBox
             // 
             this.TPSearchTextBox.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TPSearchTextBox.Location = new System.Drawing.Point(200, 28);
+            this.TPSearchTextBox.Location = new System.Drawing.Point(200, 32);
             this.TPSearchTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TPSearchTextBox.Name = "TPSearchTextBox";
-            this.TPSearchTextBox.Size = new System.Drawing.Size(424, 30);
+            this.TPSearchTextBox.Size = new System.Drawing.Size(258, 30);
             this.TPSearchTextBox.TabIndex = 8;
             // 
             // TPSearchButton
             // 
             this.TPSearchButton.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TPSearchButton.Location = new System.Drawing.Point(643, 25);
+            this.TPSearchButton.Location = new System.Drawing.Point(484, 32);
             this.TPSearchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TPSearchButton.Name = "TPSearchButton";
             this.TPSearchButton.Size = new System.Drawing.Size(105, 38);
@@ -490,7 +534,7 @@
             this.TPDescTextBox.Location = new System.Drawing.Point(177, 140);
             this.TPDescTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TPDescTextBox.Name = "TPDescTextBox";
-            this.TPDescTextBox.Size = new System.Drawing.Size(567, 30);
+            this.TPDescTextBox.Size = new System.Drawing.Size(281, 30);
             this.TPDescTextBox.TabIndex = 4;
             // 
             // label1
@@ -509,7 +553,7 @@
             this.TPNameTextBox.Location = new System.Drawing.Point(177, 87);
             this.TPNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TPNameTextBox.Name = "TPNameTextBox";
-            this.TPNameTextBox.Size = new System.Drawing.Size(447, 30);
+            this.TPNameTextBox.Size = new System.Drawing.Size(281, 30);
             this.TPNameTextBox.TabIndex = 2;
             // 
             // MovieTvSName
@@ -532,10 +576,10 @@
             this.Size = new System.Drawing.Size(1993, 827);
             this.WatchListPMPanel.ResumeLayout(false);
             this.WatchListPMPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TPCatGifPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TPdataGridView)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.TPMenuPanel.ResumeLayout(false);
+            this.TPMenuPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -552,10 +596,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button TPFilterByPrioButton;
         private System.Windows.Forms.Button TPPriorityButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox TPCatGifPictureBox;
         public System.Windows.Forms.DataGridView TPdataGridView;
         private System.Windows.Forms.Label TaskPlannerTitleLabel;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel TPMenuPanel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TPSearchTextBox;
@@ -576,5 +620,9 @@
         private System.Windows.Forms.ComboBox TPTaskTagComboBox;
         private System.Windows.Forms.ComboBox TPPrioComboBox;
         private System.Windows.Forms.CheckedListBox TPPrioCheckedListBox;
+        private System.Windows.Forms.Button AddToDoButton;
+        private System.Windows.Forms.TextBox ToDoTextBox;
+        private System.Windows.Forms.Label ToDoListLabel;
+        private System.Windows.Forms.Panel ToDoPanel;
     }
 }

@@ -441,25 +441,56 @@ namespace DesktopJournelApp
             }
             return journalText;
         }
+        public static Dictionary<string, object> GetTrackBehaviorByDate(DateTime date)
+        {
+            Dictionary<string, object> trackBehavior = null;
+            try
+            {
+                string query = "SELECT Mood, WaterCount, PageCount, HoursOfWork, MinutesOfExercise, MinutesOfWatch, HoursOfSleep FROM TrackBehaviour WHERE CAST(Date AS DATE) = @Date AND UserId = @UserId";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Date", date.Date);
+                    command.Parameters.AddWithValue("@UserId", MainAppForm._userId);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            trackBehavior = new Dictionary<string, object>
+                    {
+                        { "Mood", reader["Mood"].ToString() },
+                        { "WaterCount", Convert.ToInt32(reader["WaterCount"]) },
+                        { "PageCount", Convert.ToInt32(reader["PageCount"]) },
+                        { "HoursOfWork", Convert.ToInt32(reader["HoursOfWork"]) },
+                        { "MinutesOfExercise", Convert.ToInt32(reader["MinutesOfExercise"]) },
+                        { "MinutesOfWatch", Convert.ToInt32(reader["MinutesOfWatch"]) },
+                        { "HoursOfSleep", Convert.ToInt32(reader["HoursOfSleep"]) }
+                    };
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while retrieving track behavior: " + ex.Message);
+            }
+            return trackBehavior;
+        }
 
-
-        public static void InsertTrackBehaviour(string mood, int waterCount, int pageCount, int work, int exercise, int watch, int sleep)
+        public static void InsertTrackBehaviour(DateTime date, string mood, int waterCount, int pageCount, int work, int exercise, int watch, int sleep)
         {
             try
             {
-                
                 string checkQuery = "SELECT COUNT(*) FROM TrackBehaviour WHERE CAST(Date AS DATE) = @Date AND UserId = @UserId";
                 using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
                 {
-                    checkCommand.Parameters.AddWithValue("@Date", DateTime.Now.Date);
+                    checkCommand.Parameters.AddWithValue("@Date", date.Date);
                     checkCommand.Parameters.AddWithValue("@UserId", MainAppForm._userId);
                     int count = (int)checkCommand.ExecuteScalar();
 
                     if (count > 0)
                     {
-                        
                         string updateQuery = "UPDATE TrackBehaviour SET Mood = @Mood, WaterCount = @WaterCount, PageCount = @PageCount, " +
-                                             "MinutesOfWork = @MinutesOfWork, MinutesOfExercise = @MinutesOfExercise, " +
+                                             "HoursOfWork = @HoursOfWork, MinutesOfExercise = @MinutesOfExercise, " +
                                              "MinutesOfWatch = @MinutesOfWatch, HoursOfSleep = @HoursOfSleep " +
                                              "WHERE CAST(Date AS DATE) = @Date AND UserId = @UserId";
                         using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection))
@@ -467,19 +498,15 @@ namespace DesktopJournelApp
                             updateCommand.Parameters.AddWithValue("@Mood", mood);
                             updateCommand.Parameters.AddWithValue("@WaterCount", waterCount);
                             updateCommand.Parameters.AddWithValue("@PageCount", pageCount);
-                            updateCommand.Parameters.AddWithValue("@MinutesOfWork", work);
+                            updateCommand.Parameters.AddWithValue("@HoursOfWork", work);
                             updateCommand.Parameters.AddWithValue("@MinutesOfExercise", exercise);
                             updateCommand.Parameters.AddWithValue("@MinutesOfWatch", watch);
                             updateCommand.Parameters.AddWithValue("@HoursOfSleep", sleep);
-                            updateCommand.Parameters.AddWithValue("@Date", DateTime.Now.Date);
+                            updateCommand.Parameters.AddWithValue("@Date", date.Date);
                             updateCommand.Parameters.AddWithValue("@UserId", MainAppForm._userId);
 
                             int result = updateCommand.ExecuteNonQuery();
-                            if (result > 0)
-                            {
-                                
-                            }
-                            else
+                            if (result <= 0)
                             {
                                 MessageBox.Show("Update failed.");
                             }
@@ -487,27 +514,22 @@ namespace DesktopJournelApp
                     }
                     else
                     {
-                        
-                        string insertQuery = "INSERT INTO TrackBehaviour (UserId, Date, Mood, WaterCount, PageCount, MinutesOfWork, MinutesOfExercise, MinutesOfWatch, HoursOfSleep) " +
-                                             "VALUES (@UserId, @Date, @Mood, @WaterCount, @PageCount, @MinutesOfWork, @MinutesOfExercise, @MinutesOfWatch, @HoursOfSleep)";
+                        string insertQuery = "INSERT INTO TrackBehaviour (UserId, Date, Mood, WaterCount, PageCount, HoursOfWork, MinutesOfExercise, MinutesOfWatch, HoursOfSleep) " +
+                                             "VALUES (@UserId, @Date, @Mood, @WaterCount, @PageCount, @HoursOfWork, @MinutesOfExercise, @MinutesOfWatch, @HoursOfSleep)";
                         using (SqlCommand insertCommand = new SqlCommand(insertQuery, connection))
                         {
                             insertCommand.Parameters.AddWithValue("@UserId", MainAppForm._userId);
-                            insertCommand.Parameters.AddWithValue("@Date", DateTime.Now);
+                            insertCommand.Parameters.AddWithValue("@Date", date.Date);
                             insertCommand.Parameters.AddWithValue("@Mood", mood);
                             insertCommand.Parameters.AddWithValue("@WaterCount", waterCount);
                             insertCommand.Parameters.AddWithValue("@PageCount", pageCount);
-                            insertCommand.Parameters.AddWithValue("@MinutesOfWork", work);
+                            insertCommand.Parameters.AddWithValue("@HoursOfWork", work);
                             insertCommand.Parameters.AddWithValue("@MinutesOfExercise", exercise);
                             insertCommand.Parameters.AddWithValue("@MinutesOfWatch", watch);
                             insertCommand.Parameters.AddWithValue("@HoursOfSleep", sleep);
 
                             int result = insertCommand.ExecuteNonQuery();
-                            if (result > 0)
-                            {
-                                
-                            }
-                            else
+                            if (result <= 0)
                             {
                                 MessageBox.Show("Insertion failed.");
                             }
@@ -1084,6 +1106,88 @@ namespace DesktopJournelApp
                 MessageBox.Show("An error occurred while deleting book genre: " + ex.Message);
             }
         }
+
+
+
+        public static DataTable GetTrackBehaviourDataByDateRange(int userId, DateTime startDate, DateTime endDate)
+        {
+            DataTable dataTable = new DataTable();
+            try
+            {
+                string query = "SELECT Date, Mood, WaterCount, PageCount, HoursOfWork, MinutesOfExercise, MinutesOfWatch, HoursOfSleep " +
+                               "FROM TrackBehaviour WHERE UserId = @UserId AND Date BETWEEN @StartDate AND @EndDate";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserId", userId);
+                    command.Parameters.AddWithValue("@StartDate", startDate);
+                    command.Parameters.AddWithValue("@EndDate", endDate);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while retrieving track behavior data: " + ex.Message);
+            }
+            return dataTable;
+        }
+
+        public static void InsertToDoItem(int userId, string todo)
+        {
+            try
+            {
+                string query = "INSERT INTO ToDoListTable (UserId, ToDos) VALUES (@UserId, @ToDos)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserId", userId);
+                    command.Parameters.AddWithValue("@ToDos", todo);
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while inserting to-do item: " + ex.Message);
+            }
+        }
+
+        public static void DeleteToDoItem(int userId, int id)
+        {
+            try
+            {
+                string query = "DELETE FROM ToDoListTable WHERE Id = @Id AND UserId = @UserId";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Id", id);
+                    command.Parameters.AddWithValue("@UserId", userId);
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while deleting to-do item: " + ex.Message);
+            }
+        }
+
+        public static DataTable GetToDoItems(int userId)
+        {
+            DataTable dataTable = new DataTable();
+            try
+            {
+                string query = "SELECT * FROM ToDoListTable WHERE UserId = @UserId";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserId", userId);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while retrieving to-do items: " + ex.Message);
+            }
+            return dataTable;
+        }
+
 
     }
 

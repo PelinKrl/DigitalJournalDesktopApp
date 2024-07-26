@@ -71,7 +71,7 @@
             // RListBooksButton
             // 
             this.RListBooksButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RListBooksButton.Location = new System.Drawing.Point(756, 534);
+            this.RListBooksButton.Location = new System.Drawing.Point(756, 566);
             this.RListBooksButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RListBooksButton.Name = "RListBooksButton";
             this.RListBooksButton.Size = new System.Drawing.Size(129, 55);
@@ -83,7 +83,7 @@
             // RLSaveButton
             // 
             this.RLSaveButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RLSaveButton.Location = new System.Drawing.Point(592, 497);
+            this.RLSaveButton.Location = new System.Drawing.Point(609, 531);
             this.RLSaveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RLSaveButton.Name = "RLSaveButton";
             this.RLSaveButton.Size = new System.Drawing.Size(125, 55);
@@ -95,10 +95,10 @@
             // RLCommentsRichTextBox
             // 
             this.RLCommentsRichTextBox.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RLCommentsRichTextBox.Location = new System.Drawing.Point(192, 298);
+            this.RLCommentsRichTextBox.Location = new System.Drawing.Point(12, 341);
             this.RLCommentsRichTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RLCommentsRichTextBox.Name = "RLCommentsRichTextBox";
-            this.RLCommentsRichTextBox.Size = new System.Drawing.Size(543, 171);
+            this.RLCommentsRichTextBox.Size = new System.Drawing.Size(722, 171);
             this.RLCommentsRichTextBox.TabIndex = 15;
             this.RLCommentsRichTextBox.Text = "";
             // 
@@ -149,7 +149,7 @@
             this.ReadingListPMPanel.Location = new System.Drawing.Point(3, 2);
             this.ReadingListPMPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ReadingListPMPanel.Name = "ReadingListPMPanel";
-            this.ReadingListPMPanel.Size = new System.Drawing.Size(1815, 671);
+            this.ReadingListPMPanel.Size = new System.Drawing.Size(1815, 700);
             this.ReadingListPMPanel.TabIndex = 1;
             // 
             // RLListStateButton
@@ -252,7 +252,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1609, 518);
+            this.pictureBox1.Location = new System.Drawing.Point(1612, 548);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(181, 146);
@@ -272,7 +272,7 @@
             this.RLdataGridView.ReadOnly = true;
             this.RLdataGridView.RowHeadersWidth = 51;
             this.RLdataGridView.RowTemplate.Height = 24;
-            this.RLdataGridView.Size = new System.Drawing.Size(1037, 464);
+            this.RLdataGridView.Size = new System.Drawing.Size(1037, 495);
             this.RLdataGridView.TabIndex = 2;
             this.RLdataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.RLdataGridView_RowHeaderMouseClick);
             // 
@@ -312,7 +312,7 @@
             this.RLMenuPanel.Location = new System.Drawing.Point(5, 49);
             this.RLMenuPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RLMenuPanel.Name = "RLMenuPanel";
-            this.RLMenuPanel.Size = new System.Drawing.Size(745, 571);
+            this.RLMenuPanel.Size = new System.Drawing.Size(745, 625);
             this.RLMenuPanel.TabIndex = 0;
             // 
             // RLSearchComboBox
@@ -374,7 +374,7 @@
             // RLDeleteButton
             // 
             this.RLDeleteButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RLDeleteButton.Location = new System.Drawing.Point(333, 497);
+            this.RLDeleteButton.Location = new System.Drawing.Point(9, 531);
             this.RLDeleteButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RLDeleteButton.Name = "RLDeleteButton";
             this.RLDeleteButton.Size = new System.Drawing.Size(124, 55);
@@ -386,7 +386,7 @@
             // RLUpdateButton
             // 
             this.RLUpdateButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RLUpdateButton.Location = new System.Drawing.Point(463, 497);
+            this.RLUpdateButton.Location = new System.Drawing.Point(476, 531);
             this.RLUpdateButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RLUpdateButton.Name = "RLUpdateButton";
             this.RLUpdateButton.Size = new System.Drawing.Size(124, 55);
@@ -496,7 +496,7 @@
             this.Controls.Add(this.ReadingListPMPanel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ReadingListPageUserControl";
-            this.Size = new System.Drawing.Size(1821, 676);
+            this.Size = new System.Drawing.Size(1821, 754);
             this.ReadingListPMPanel.ResumeLayout(false);
             this.ReadingListPMPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

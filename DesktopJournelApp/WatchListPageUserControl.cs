@@ -373,5 +373,10 @@ namespace DesktopJournelApp
         {
 
         }
+
+        private void WatchListPageUserControl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

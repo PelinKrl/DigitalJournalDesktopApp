@@ -98,16 +98,16 @@
             this.WatchListPMPanel.Location = new System.Drawing.Point(3, 2);
             this.WatchListPMPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WatchListPMPanel.Name = "WatchListPMPanel";
-            this.WatchListPMPanel.Size = new System.Drawing.Size(1824, 682);
+            this.WatchListPMPanel.Size = new System.Drawing.Size(1824, 718);
             this.WatchListPMPanel.TabIndex = 0;
             this.WatchListPMPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.WatchListPMPanel_Paint);
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(1767, 633);
+            this.pictureBox2.Location = new System.Drawing.Point(1760, 692);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(53, 25);
+            this.pictureBox2.Size = new System.Drawing.Size(59, 20);
             this.pictureBox2.TabIndex = 30;
             this.pictureBox2.TabStop = false;
             // 
@@ -213,7 +213,7 @@
             // WLListAllButton
             // 
             this.WLListAllButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WLListAllButton.Location = new System.Drawing.Point(1083, 534);
+            this.WLListAllButton.Location = new System.Drawing.Point(1111, 571);
             this.WLListAllButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WLListAllButton.Name = "WLListAllButton";
             this.WLListAllButton.Size = new System.Drawing.Size(115, 55);
@@ -234,7 +234,7 @@
             this.WLdataGridView.ReadOnly = true;
             this.WLdataGridView.RowHeadersWidth = 51;
             this.WLdataGridView.RowTemplate.Height = 24;
-            this.WLdataGridView.Size = new System.Drawing.Size(1013, 464);
+            this.WLdataGridView.Size = new System.Drawing.Size(1013, 498);
             this.WLdataGridView.TabIndex = 2;
             this.WLdataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.WLdataGridView_CellContentClick);
             this.WLdataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.WLdataGridView_RowHeaderMouseClick);
@@ -275,7 +275,7 @@
             this.panel1.Location = new System.Drawing.Point(3, 55);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(765, 567);
+            this.panel1.Size = new System.Drawing.Size(765, 619);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -298,7 +298,7 @@
             // WLDeleteButton
             // 
             this.WLDeleteButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WLDeleteButton.Location = new System.Drawing.Point(370, 497);
+            this.WLDeleteButton.Location = new System.Drawing.Point(8, 527);
             this.WLDeleteButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WLDeleteButton.Name = "WLDeleteButton";
             this.WLDeleteButton.Size = new System.Drawing.Size(124, 55);
@@ -310,7 +310,7 @@
             // WLUpdateButton
             // 
             this.WLUpdateButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WLUpdateButton.Location = new System.Drawing.Point(500, 497);
+            this.WLUpdateButton.Location = new System.Drawing.Point(500, 527);
             this.WLUpdateButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WLUpdateButton.Name = "WLUpdateButton";
             this.WLUpdateButton.Size = new System.Drawing.Size(124, 55);
@@ -345,7 +345,7 @@
             // WLSaveButton
             // 
             this.WLSaveButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WLSaveButton.Location = new System.Drawing.Point(631, 497);
+            this.WLSaveButton.Location = new System.Drawing.Point(631, 527);
             this.WLSaveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WLSaveButton.Name = "WLSaveButton";
             this.WLSaveButton.Size = new System.Drawing.Size(124, 55);
@@ -357,10 +357,10 @@
             // WLCommentsRichTextBox
             // 
             this.WLCommentsRichTextBox.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WLCommentsRichTextBox.Location = new System.Drawing.Point(178, 302);
+            this.WLCommentsRichTextBox.Location = new System.Drawing.Point(9, 335);
             this.WLCommentsRichTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WLCommentsRichTextBox.Name = "WLCommentsRichTextBox";
-            this.WLCommentsRichTextBox.Size = new System.Drawing.Size(579, 171);
+            this.WLCommentsRichTextBox.Size = new System.Drawing.Size(746, 171);
             this.WLCommentsRichTextBox.TabIndex = 15;
             this.WLCommentsRichTextBox.Text = "";
             this.WLCommentsRichTextBox.TextChanged += new System.EventHandler(this.WLCommentsRichTextBox_TextChanged);
@@ -517,7 +517,7 @@
             // WLListMoviesButton
             // 
             this.WLListMoviesButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WLListMoviesButton.Location = new System.Drawing.Point(789, 534);
+            this.WLListMoviesButton.Location = new System.Drawing.Point(789, 571);
             this.WLListMoviesButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WLListMoviesButton.Name = "WLListMoviesButton";
             this.WLListMoviesButton.Size = new System.Drawing.Size(127, 55);
@@ -529,10 +529,10 @@
             // WLListTvShowsButton
             // 
             this.WLListTvShowsButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WLListTvShowsButton.Location = new System.Drawing.Point(937, 534);
+            this.WLListTvShowsButton.Location = new System.Drawing.Point(937, 571);
             this.WLListTvShowsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WLListTvShowsButton.Name = "WLListTvShowsButton";
-            this.WLListTvShowsButton.Size = new System.Drawing.Size(128, 55);
+            this.WLListTvShowsButton.Size = new System.Drawing.Size(152, 55);
             this.WLListTvShowsButton.TabIndex = 6;
             this.WLListTvShowsButton.Text = "List TV Shows";
             this.WLListTvShowsButton.UseVisualStyleBackColor = true;
@@ -542,7 +542,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1603, 498);
+            this.pictureBox1.Location = new System.Drawing.Point(1603, 555);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(199, 156);
@@ -573,7 +573,8 @@
             this.Controls.Add(this.WatchListPMPanel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "WatchListPageUserControl";
-            this.Size = new System.Drawing.Size(1831, 660);
+            this.Size = new System.Drawing.Size(1831, 792);
+            this.Load += new System.EventHandler(this.WatchListPageUserControl_Load);
             this.WatchListPMPanel.ResumeLayout(false);
             this.WatchListPMPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

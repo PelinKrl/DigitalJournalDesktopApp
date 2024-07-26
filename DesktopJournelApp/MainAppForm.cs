@@ -15,11 +15,12 @@ namespace DesktopJournelApp
     public partial class MainAppForm : Form
     {
         private JournalPageUserControl journalPage;
-        private CalendarPageUserControl calendarPage;
+        //private CalendarPageUserControl calendarPage;
         private WeatherAppPageUserControl weatherPage;
         private WatchListPageUserControl watchListPage;
         private ReadingListPageUserControl readingListPage;
         private TaskPlannerPageUserControl taskPlanerPage;
+        private GraphsPageUserControl graphsPage;
 
         public static int _userId;
         public MainAppForm(int userId)
@@ -28,12 +29,12 @@ namespace DesktopJournelApp
             this.Paint += new PaintEventHandler(this.MainAppForm_Paint);
             this.Resize += new EventHandler(this.MainAppForm_Resize);
             InitializeJournalPage();
-            InitializeCalendarPage();
+            //InitializeCalendarPage();
             InitializeWeatherAppPage();
             InitializeWatchListPage();
             InitializeReadingListPage();
             InitializeTaskPlanerPage();
-            //MoodscomboBox.SelectedIndex= 0;
+            InitilizeGraphsPage();
             _userId = userId;
         }
 
@@ -71,28 +72,27 @@ namespace DesktopJournelApp
         private void HideAllPages()
         {
             journalPage.Visible = false;
-            calendarPage.Visible = false;
+            //calendarPage.Visible = false;
             weatherPage.Visible = false;
             watchListPage.Visible = false;
             readingListPage.Visible = false;
             taskPlanerPage.Visible = false;
+            graphsPage.Visible = false;
         }
 
         private void InitializeJournalPage()
         {
-
             journalPage = new JournalPageUserControl();
             journalPage.Dock = DockStyle.Fill; // Fill the MainAreaPanel
             MainAreaPanel.Controls.Add(journalPage);
         }
 
-        private void InitializeCalendarPage()
-        {
-
-            calendarPage = new CalendarPageUserControl();
-            calendarPage.Dock = DockStyle.Fill; // Fill the MainAreaPanel
-            MainAreaPanel.Controls.Add(calendarPage);
-        }
+        //private void InitializeCalendarPage()
+        //{
+        //    calendarPage = new CalendarPageUserControl();
+        //    calendarPage.Dock = DockStyle.Fill; // Fill the MainAreaPanel
+        //    MainAreaPanel.Controls.Add(calendarPage);
+        //}
         private void InitializeWeatherAppPage()
         {
             weatherPage = new WeatherAppPageUserControl();
@@ -121,6 +121,13 @@ namespace DesktopJournelApp
             MainAreaPanel.Controls.Add(taskPlanerPage);
         }
 
+        private void InitilizeGraphsPage()
+        {
+            graphsPage = new GraphsPageUserControl();
+            graphsPage.Dock = DockStyle.Fill;
+            MainAreaPanel.Controls.Add(graphsPage);
+        }
+
         private void ShowJournalPage()
         {
             HideAllPages();
@@ -128,25 +135,24 @@ namespace DesktopJournelApp
             journalPage.Visible = true;
 
             JournalPanel.BackColor = Color.MediumPurple;
-            //TBPanel.BackColor = Color.Transparent;
             WeatherAppPanel.BackColor = Color.Transparent;
             WatchListPanel.BackColor = Color.Transparent;
             ReadingListPanel.BackColor = Color.Transparent;
             TaskPlannerPanel.BackColor = Color.Transparent;
+            WeeklyGraphPanel.BackColor = Color.Transparent;
 
         }
 
-        private void ShowCalendarPage()
-        {
-            HideAllPages();
-            calendarPage.Visible = true;
-            //TBPanel.BackColor = Color.MediumPurple;
-            JournalPanel.BackColor = Color.Transparent;
-            WeatherAppPanel.BackColor = Color.Transparent;
-            WatchListPanel.BackColor = Color.Transparent;
-            ReadingListPanel.BackColor = Color.Transparent;
-            TaskPlannerPanel.BackColor = Color.Transparent;
-        }
+        //private void ShowCalendarPage()
+        //{
+        //    HideAllPages();
+        //    //calendarPage.Visible = true;
+        //    JournalPanel.BackColor = Color.Transparent;
+        //    WeatherAppPanel.BackColor = Color.Transparent;
+        //    WatchListPanel.BackColor = Color.Transparent;
+        //    ReadingListPanel.BackColor = Color.Transparent;
+        //    TaskPlannerPanel.BackColor = Color.Transparent;
+        //}
 
         private void ShowWeatherAppPage()
         {
@@ -154,10 +160,10 @@ namespace DesktopJournelApp
             weatherPage.Visible = true;
             WeatherAppPanel.BackColor = Color.MediumPurple;
             JournalPanel.BackColor = Color.Transparent;
-            //TBPanel.BackColor = Color.Transparent;
             WatchListPanel.BackColor = Color.Transparent;
             ReadingListPanel.BackColor = Color.Transparent;
             TaskPlannerPanel.BackColor = Color.Transparent;
+            WeeklyGraphPanel.BackColor = Color.Transparent;
         }
 
         private void ShowWatchListPage()
@@ -166,10 +172,10 @@ namespace DesktopJournelApp
             watchListPage.Visible = true;
             WatchListPanel.BackColor = Color.MediumPurple;
             JournalPanel.BackColor = Color.Transparent;
-            //TBPanel.BackColor = Color.Transparent;
             WeatherAppPanel.BackColor = Color.Transparent;
             TaskPlannerPanel.BackColor = Color.Transparent;
             ReadingListPanel.BackColor = Color.Transparent;
+            WeeklyGraphPanel.BackColor = Color.Transparent;
         }
 
         private void ShowReadingListPage()
@@ -178,11 +184,10 @@ namespace DesktopJournelApp
             readingListPage.Visible = true;
             ReadingListPanel.BackColor = Color.MediumPurple;
             JournalPanel.BackColor = Color.Transparent;
-            //TBPanel.BackColor = Color.Transparent;
             WeatherAppPanel.BackColor = Color.Transparent;
             WatchListPanel.BackColor = Color.Transparent;
             TaskPlannerPanel.BackColor = Color.Transparent;
-
+            WeeklyGraphPanel.BackColor = Color.Transparent;
         }
         private void ShowTaskPlanerPage()
         {
@@ -190,10 +195,23 @@ namespace DesktopJournelApp
             taskPlanerPage.Visible = true;
             TaskPlannerPanel.BackColor = Color.MediumPurple;
             JournalPanel.BackColor = Color.Transparent;
-            //TBPanel.BackColor = Color.Transparent;
             WeatherAppPanel.BackColor = Color.Transparent;
             WatchListPanel.BackColor = Color.Transparent;
             ReadingListPanel.BackColor = Color.Transparent;
+            WeeklyGraphPanel.BackColor = Color.Transparent;
+
+        }
+
+        private void ShowGraphsPage()
+        {
+            HideAllPages();
+            graphsPage.Visible = true;
+            WeeklyGraphPanel.BackColor = Color.MediumPurple;
+            JournalPanel.BackColor = Color.Transparent;
+            WeatherAppPanel.BackColor = Color.Transparent;
+            WatchListPanel.BackColor = Color.Transparent;
+            ReadingListPanel.BackColor = Color.Transparent;
+            TaskPlannerPanel.BackColor = Color.Transparent;
 
         }
 
@@ -225,7 +243,7 @@ namespace DesktopJournelApp
 
         }
 
-        int x = 0; // to know where we are 
+        
 
         private void WeatherAppPanel_Click(object sender, EventArgs e)
         {
@@ -286,6 +304,21 @@ namespace DesktopJournelApp
                 clickPlace = 5;
             }
         }
+        private void WeeklyHabbitGraphLabel_Click(object sender, EventArgs e)
+        {
+            ShowGraphsPage();
+            if (MainAreaPanel.Visible == true && clickPlace == 6)
+            {
+                MainAreaPanel.Visible = false;
+                WeeklyGraphPanel.BackColor = Color.Transparent;
+            }
+            else
+            {
+                MainAreaPanel.Visible = true;
+                clickPlace = 6;
+            }
+
+        }
 
         private void MainAppForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -333,14 +366,26 @@ namespace DesktopJournelApp
            settingForm.Show();
         }
 
-        private void WeeklyHabbitGraphLabel_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void todaysReminderLabel_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void MainAreaPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        //private void JournalPanel_MouseEnter(object sender, EventArgs e)
+        //{
+        //    JournalPanel.BackColor = Color.LightGray; 
+        //}
+
+        //private void JournalPanel_MouseLeave(object sender, EventArgs e)
+        //{
+        //    JournalPanel.BackColor = Color.Transparent; 
+        //}
     }
 }

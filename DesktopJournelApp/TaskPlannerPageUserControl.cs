@@ -15,10 +15,63 @@ namespace DesktopJournelApp
         public TaskPlannerPageUserControl()
         {
             InitializeComponent();
+            LoadToDoItems();
+            TPdataGridView.CellFormatting += TPdataGridView_CellFormatting;
+
         }
 
-        private void TaskPlannerTitleLabel_Click(object sender, EventArgs e)
+        protected override void OnLoad(EventArgs e)
         {
+            base.OnLoad(e);
+            LoadToDoItems();
+        }
+
+        
+        private void LoadToDoItems()
+        {
+            ToDoPanel.Controls.Clear();
+            DataTable toDoItems = SQL.GetToDoItems(MainAppForm._userId);
+            foreach (DataRow row in toDoItems.Rows)
+            {
+                AddToDoItemToPanel(Convert.ToInt32(row["Id"]), row["ToDos"].ToString());
+            }
+        }
+
+        private void AddToDoItemToPanel(int id, string todo)
+        {
+            Panel panel = new Panel() { Height = 30, Dock = DockStyle.Top };
+
+            CheckBox checkBox = new CheckBox()
+            {
+                Text = todo,
+                Dock = DockStyle.Left,
+                Width = 200,
+                Font = new Font("Courier New", 12)
+            };
+            checkBox.CheckStateChanged += (s, e) =>
+            {
+                if (checkBox.Checked)
+                {
+                    checkBox.Font = new Font(checkBox.Font, FontStyle.Strikeout);
+                }
+                else
+                {
+                    checkBox.Font = new Font(checkBox.Font, FontStyle.Regular);
+                }
+            };
+
+            Button deleteButton = new Button() { Text = "X", Dock = DockStyle.Right, Width = 30 };
+            deleteButton.Click += (s, e) =>
+            {
+                SQL.DeleteToDoItem(MainAppForm._userId, id);
+                LoadToDoItems();
+            };
+
+            panel.Controls.Add(checkBox);
+            panel.Controls.Add(deleteButton);
+            ToDoPanel.Controls.Add(panel);
+            ToDoPanel.Controls.SetChildIndex(panel, 0); // Add the panel at the top
+
 
         }
 
@@ -212,6 +265,41 @@ namespace DesktopJournelApp
             }
 
             TPPrioCheckedListBox.Visible = false;
+        }
+
+        private void AddToDoButton_Click(object sender, EventArgs e)
+        {
+            string todo = ToDoTextBox.Text.Trim();
+            if (!string.IsNullOrEmpty(todo))
+            {
+                SQL.InsertToDoItem(MainAppForm._userId, todo);
+                ToDoTextBox.Clear();
+                LoadToDoItems();
+            }
+            else
+            {
+                MessageBox.Show("Please enter a to-do item.");
+            }
+        }
+
+        private void TPdataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (TPdataGridView.Columns[e.ColumnIndex].Name == "State")
+            {
+                if (e.Value != null)
+                {
+                    if (e.Value.ToString() == "Done")
+                    {
+                        e.CellStyle.BackColor = Color.Green;
+                        e.CellStyle.ForeColor = Color.White;
+                    }
+                    else if (e.Value.ToString() == "Not Done")
+                    {
+                        e.CellStyle.BackColor = Color.Red;
+                        e.CellStyle.ForeColor = Color.White;
+                    }
+                }
+            }
         }
     }
     
