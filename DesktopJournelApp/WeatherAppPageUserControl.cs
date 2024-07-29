@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Web.WebView2.Core;
+using System;
 using System.IO;
 using System.Windows.Forms;
 
@@ -10,30 +11,22 @@ namespace DesktopJournelApp
         {
             InitializeComponent();
             LoadWebContent();
-             
         }
 
-        private void WeatherAppPageUserControl_Load(object sender, EventArgs e)
+        private async void LoadWebContent()
         {
-            
-        }
-
-        private void LoadWebContent()
-        {
-            // Get the path to the HTML file
             string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            string webContentPath = Path.Combine(appDirectory, "WeatherApp", "index.html");
+            string webContentPath = Path.GetFullPath("C:\\Users\\psk\\Desktop\\GitHubFiles\\DigitalJournalDesktopApp\\DesktopJournelApp\\WeatherApp\\index.html");
 
-            if (File.Exists(webContentPath))
+            if (File.Exists(webContentPath)) 
             {
-                webBrowser1.Url = new Uri(webContentPath);
+                await webView21.EnsureCoreWebView2Async(null);
+                webView21.CoreWebView2.Navigate(webContentPath);
             }
             else
             {
                 MessageBox.Show("Web content not found.");
             }
         }
-
-
     }
 }

@@ -5,6 +5,21 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopJournelApp", "DesktopJournelApp\DesktopJournelApp.csproj", "{7AC84BC7-F956-470D-BE31-3FB428328F8D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{25E7A357-3C53-4F18-A2AE-4DA83838BE26}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Downloads\ClearScript-7.4.5\ClearScript-7.4.5\.gitignore = ..\..\..\Downloads\ClearScript-7.4.5\ClearScript-7.4.5\.gitignore
+		..\..\..\Downloads\ClearScript-7.4.5\ClearScript-7.4.5\ClearScript.NoV8.sln = ..\..\..\Downloads\ClearScript-7.4.5\ClearScript-7.4.5\ClearScript.NoV8.sln
+		..\..\..\Downloads\ClearScript-7.4.5\ClearScript-7.4.5\ClearScript.NoV8.sln.DotSettings = ..\..\..\Downloads\ClearScript-7.4.5\ClearScript-7.4.5\ClearScript.NoV8.sln.DotSettings
+		..\..\..\Downloads\ClearScript-7.4.5\ClearScript-7.4.5\ClearScript.sln = ..\..\..\Downloads\ClearScript-7.4.5\ClearScript-7.4.5\ClearScript.sln
+		..\..\..\Downloads\ClearScript-7.4.5\ClearScript-7.4.5\ClearScript.sln.DotSettings = ..\..\..\Downloads\ClearScript-7.4.5\ClearScript-7.4.5\ClearScript.sln.DotSettings
+		..\..\..\Downloads\ClearScript-7.4.5\ClearScript-7.4.5\License.txt = ..\..\..\Downloads\ClearScript-7.4.5\ClearScript-7.4.5\License.txt
+		..\..\..\Downloads\ClearScript-7.4.5\ClearScript-7.4.5\ReadMe.md = ..\..\..\Downloads\ClearScript-7.4.5\ClearScript-7.4.5\ReadMe.md
+		..\..\..\Downloads\ClearScript-7.4.5\ClearScript-7.4.5\RunNetCoreTests.cmd = ..\..\..\Downloads\ClearScript-7.4.5\ClearScript-7.4.5\RunNetCoreTests.cmd
+		..\..\..\Downloads\ClearScript-7.4.5\ClearScript-7.4.5\SECURITY.md = ..\..\..\Downloads\ClearScript-7.4.5\ClearScript-7.4.5\SECURITY.md
+		..\..\..\Downloads\ClearScript-7.4.5\ClearScript-7.4.5\V8Update.cmd = ..\..\..\Downloads\ClearScript-7.4.5\ClearScript-7.4.5\V8Update.cmd
+		..\..\..\Downloads\ClearScript-7.4.5\ClearScript-7.4.5\Version.tt = ..\..\..\Downloads\ClearScript-7.4.5\ClearScript-7.4.5\Version.tt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
