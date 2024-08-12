@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WatchListPageUserControl));
             this.WatchListPMPanel = new System.Windows.Forms.Panel();
+            this.WLLogButton = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.WLListStateButton = new System.Windows.Forms.Button();
             this.WLStateFilterComboBox = new System.Windows.Forms.ComboBox();
@@ -81,6 +82,7 @@
             // 
             this.WatchListPMPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.WatchListPMPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.WatchListPMPanel.Controls.Add(this.WLLogButton);
             this.WatchListPMPanel.Controls.Add(this.pictureBox2);
             this.WatchListPMPanel.Controls.Add(this.WLListStateButton);
             this.WatchListPMPanel.Controls.Add(this.WLStateFilterComboBox);
@@ -100,7 +102,17 @@
             this.WatchListPMPanel.Name = "WatchListPMPanel";
             this.WatchListPMPanel.Size = new System.Drawing.Size(1824, 718);
             this.WatchListPMPanel.TabIndex = 0;
-            this.WatchListPMPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.WatchListPMPanel_Paint);
+            // 
+            // WLLogButton
+            // 
+            this.WLLogButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WLLogButton.Location = new System.Drawing.Point(1249, 571);
+            this.WLLogButton.Name = "WLLogButton";
+            this.WLLogButton.Size = new System.Drawing.Size(71, 55);
+            this.WLLogButton.TabIndex = 33;
+            this.WLLogButton.Text = "LOG";
+            this.WLLogButton.UseVisualStyleBackColor = true;
+            this.WLLogButton.Click += new System.EventHandler(this.WLLogButton_Click);
             // 
             // pictureBox2
             // 
@@ -137,7 +149,6 @@
             this.WLStateFilterComboBox.Name = "WLStateFilterComboBox";
             this.WLStateFilterComboBox.Size = new System.Drawing.Size(165, 28);
             this.WLStateFilterComboBox.TabIndex = 28;
-            this.WLStateFilterComboBox.SelectedIndexChanged += new System.EventHandler(this.WLStateFilterComboBox_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -148,7 +159,6 @@
             this.label7.Size = new System.Drawing.Size(154, 22);
             this.label7.TabIndex = 27;
             this.label7.Text = "Choose State";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // WLFilterByGenreButton
             // 
@@ -208,7 +218,6 @@
             this.GenresCheckedListBox.Size = new System.Drawing.Size(238, 361);
             this.GenresCheckedListBox.TabIndex = 24;
             this.GenresCheckedListBox.Visible = false;
-            this.GenresCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.GenresCheckedListBox_SelectedIndexChanged);
             // 
             // WLListAllButton
             // 
@@ -236,7 +245,6 @@
             this.WLdataGridView.RowTemplate.Height = 24;
             this.WLdataGridView.Size = new System.Drawing.Size(1013, 498);
             this.WLdataGridView.TabIndex = 2;
-            this.WLdataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.WLdataGridView_CellContentClick);
             this.WLdataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.WLdataGridView_RowHeaderMouseClick);
             // 
             // MyWatchListTitleLabel
@@ -248,7 +256,6 @@
             this.MyWatchListTitleLabel.Size = new System.Drawing.Size(277, 37);
             this.MyWatchListTitleLabel.TabIndex = 1;
             this.MyWatchListTitleLabel.Text = "My Watch List";
-            this.MyWatchListTitleLabel.Click += new System.EventHandler(this.MyWatchListTitleLabel_Click);
             // 
             // panel1
             // 
@@ -277,7 +284,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(765, 619);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // SearchComboBox
             // 
@@ -293,7 +299,6 @@
             this.SearchComboBox.Name = "SearchComboBox";
             this.SearchComboBox.Size = new System.Drawing.Size(173, 30);
             this.SearchComboBox.TabIndex = 21;
-            this.SearchComboBox.SelectedIndexChanged += new System.EventHandler(this.SearchComboBox_SelectedIndexChanged);
             // 
             // WLDeleteButton
             // 
@@ -329,7 +334,6 @@
             this.GenreComboBox.Name = "GenreComboBox";
             this.GenreComboBox.Size = new System.Drawing.Size(166, 28);
             this.GenreComboBox.TabIndex = 18;
-            this.GenreComboBox.SelectedIndexChanged += new System.EventHandler(this.GenreComboBox_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -340,7 +344,6 @@
             this.label5.Size = new System.Drawing.Size(70, 22);
             this.label5.TabIndex = 17;
             this.label5.Text = "Genre";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // WLSaveButton
             // 
@@ -363,7 +366,6 @@
             this.WLCommentsRichTextBox.Size = new System.Drawing.Size(746, 171);
             this.WLCommentsRichTextBox.TabIndex = 15;
             this.WLCommentsRichTextBox.Text = "";
-            this.WLCommentsRichTextBox.TextChanged += new System.EventHandler(this.WLCommentsRichTextBox_TextChanged);
             // 
             // label6
             // 
@@ -374,7 +376,6 @@
             this.label6.Size = new System.Drawing.Size(142, 22);
             this.label6.TabIndex = 14;
             this.label6.Text = "My Comments";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label4
             // 
@@ -385,7 +386,6 @@
             this.label4.Size = new System.Drawing.Size(46, 22);
             this.label4.TabIndex = 13;
             this.label4.Text = "/10";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // WLRatingTextBox
             // 
@@ -395,7 +395,6 @@
             this.WLRatingTextBox.Name = "WLRatingTextBox";
             this.WLRatingTextBox.Size = new System.Drawing.Size(53, 30);
             this.WLRatingTextBox.TabIndex = 12;
-            this.WLRatingTextBox.TextChanged += new System.EventHandler(this.WLRatingTextBox_TextChanged);
             // 
             // label3
             // 
@@ -406,7 +405,6 @@
             this.label3.Size = new System.Drawing.Size(118, 22);
             this.label3.TabIndex = 11;
             this.label3.Text = "My Rating";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // WLStateComboBox
             // 
@@ -422,7 +420,6 @@
             this.WLStateComboBox.Name = "WLStateComboBox";
             this.WLStateComboBox.Size = new System.Drawing.Size(253, 30);
             this.WLStateComboBox.TabIndex = 10;
-            this.WLStateComboBox.SelectedIndexChanged += new System.EventHandler(this.WLStateComboBox_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -433,7 +430,6 @@
             this.label2.Size = new System.Drawing.Size(70, 22);
             this.label2.TabIndex = 9;
             this.label2.Text = "State";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // WLSearchTextBox
             // 
@@ -443,7 +439,6 @@
             this.WLSearchTextBox.Name = "WLSearchTextBox";
             this.WLSearchTextBox.Size = new System.Drawing.Size(418, 30);
             this.WLSearchTextBox.TabIndex = 8;
-            this.WLSearchTextBox.TextChanged += new System.EventHandler(this.WLSearchTextBox_TextChanged);
             // 
             // WLSearch
             // 
@@ -465,7 +460,6 @@
             this.WLDirectorTextBox.Name = "WLDirectorTextBox";
             this.WLDirectorTextBox.Size = new System.Drawing.Size(586, 30);
             this.WLDirectorTextBox.TabIndex = 4;
-            this.WLDirectorTextBox.TextChanged += new System.EventHandler(this.WLDirectorTextBox_TextChanged);
             // 
             // label1
             // 
@@ -476,7 +470,6 @@
             this.label1.Size = new System.Drawing.Size(106, 22);
             this.label1.TabIndex = 3;
             this.label1.Text = "Director";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // WLNameTextBox
             // 
@@ -486,7 +479,6 @@
             this.WLNameTextBox.Name = "WLNameTextBox";
             this.WLNameTextBox.Size = new System.Drawing.Size(455, 30);
             this.WLNameTextBox.TabIndex = 2;
-            this.WLNameTextBox.TextChanged += new System.EventHandler(this.WLNameTextBox_TextChanged);
             // 
             // WLTypeComboBox
             // 
@@ -501,7 +493,6 @@
             this.WLTypeComboBox.Name = "WLTypeComboBox";
             this.WLTypeComboBox.Size = new System.Drawing.Size(127, 28);
             this.WLTypeComboBox.TabIndex = 1;
-            this.WLTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.WLTypeComboBox_SelectedIndexChanged);
             // 
             // MovieTvSName
             // 
@@ -512,7 +503,6 @@
             this.MovieTvSName.Size = new System.Drawing.Size(154, 22);
             this.MovieTvSName.TabIndex = 0;
             this.MovieTvSName.Text = "Name of the ";
-            this.MovieTvSName.Click += new System.EventHandler(this.MovieTvSName_Click);
             // 
             // WLListMoviesButton
             // 
@@ -549,13 +539,11 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // watchTableBindingSource
             // 
             this.watchTableBindingSource.DataMember = "WatchTable";
             this.watchTableBindingSource.DataSource = this.pelinDatabaseDataSet1;
-            this.watchTableBindingSource.CurrentChanged += new System.EventHandler(this.watchTableBindingSource_CurrentChanged);
             // 
             // pelinDatabaseDataSet1
             // 
@@ -574,7 +562,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "WatchListPageUserControl";
             this.Size = new System.Drawing.Size(1831, 792);
-            this.Load += new System.EventHandler(this.WatchListPageUserControl_Load);
             this.WatchListPMPanel.ResumeLayout(false);
             this.WatchListPMPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -628,5 +615,6 @@
         private System.Windows.Forms.ComboBox WLStateFilterComboBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button WLLogButton;
     }
 }

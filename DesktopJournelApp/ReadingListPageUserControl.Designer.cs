@@ -62,6 +62,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.RLNameTextBox = new System.Windows.Forms.TextBox();
             this.MovieTvSName = new System.Windows.Forms.Label();
+            this.RLLogButton = new System.Windows.Forms.Button();
             this.ReadingListPMPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RLdataGridView)).BeginInit();
@@ -135,6 +136,7 @@
             // 
             this.ReadingListPMPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ReadingListPMPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ReadingListPMPanel.Controls.Add(this.RLLogButton);
             this.ReadingListPMPanel.Controls.Add(this.RLListStateButton);
             this.ReadingListPMPanel.Controls.Add(this.RLStateFilterComboBox);
             this.ReadingListPMPanel.Controls.Add(this.label8);
@@ -489,6 +491,17 @@
             this.MovieTvSName.TabIndex = 0;
             this.MovieTvSName.Text = "Name of the book";
             // 
+            // RLLogButton
+            // 
+            this.RLLogButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RLLogButton.Location = new System.Drawing.Point(900, 566);
+            this.RLLogButton.Name = "RLLogButton";
+            this.RLLogButton.Size = new System.Drawing.Size(71, 55);
+            this.RLLogButton.TabIndex = 32;
+            this.RLLogButton.Text = "LOG";
+            this.RLLogButton.UseVisualStyleBackColor = true;
+            this.RLLogButton.Click += new System.EventHandler(this.RLLogButton_Click);
+            // 
             // ReadingListPageUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -542,5 +555,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox RLStateFilterComboBox;
         private System.Windows.Forms.Button RLListStateButton;
+        private System.Windows.Forms.Button RLLogButton;
     }
 }

@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.SettingMenuPanel = new System.Windows.Forms.Panel();
+            this.LogOutButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ChangeUserNameButton = new System.Windows.Forms.Button();
             this.AddGenreBookButton = new System.Windows.Forms.Button();
             this.ChangePasswordButton = new System.Windows.Forms.Button();
             this.ChangeCityButton = new System.Windows.Forms.Button();
             this.ChosenSettingPanel = new System.Windows.Forms.Panel();
-            this.LogOutButton = new System.Windows.Forms.Button();
             this.SettingMenuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +53,17 @@
             this.SettingMenuPanel.Name = "SettingMenuPanel";
             this.SettingMenuPanel.Size = new System.Drawing.Size(262, 540);
             this.SettingMenuPanel.TabIndex = 6;
+            // 
+            // LogOutButton
+            // 
+            this.LogOutButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutButton.Location = new System.Drawing.Point(27, 349);
+            this.LogOutButton.Name = "LogOutButton";
+            this.LogOutButton.Size = new System.Drawing.Size(204, 62);
+            this.LogOutButton.TabIndex = 11;
+            this.LogOutButton.Text = "Log Out";
+            this.LogOutButton.UseVisualStyleBackColor = true;
+            this.LogOutButton.Click += new System.EventHandler(this.LogOutButton_Click);
             // 
             // pictureBox1
             // 
@@ -115,17 +126,6 @@
             this.ChosenSettingPanel.Size = new System.Drawing.Size(701, 540);
             this.ChosenSettingPanel.TabIndex = 7;
             // 
-            // LogOutButton
-            // 
-            this.LogOutButton.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogOutButton.Location = new System.Drawing.Point(27, 349);
-            this.LogOutButton.Name = "LogOutButton";
-            this.LogOutButton.Size = new System.Drawing.Size(204, 62);
-            this.LogOutButton.TabIndex = 11;
-            this.LogOutButton.Text = "Log Out";
-            this.LogOutButton.UseVisualStyleBackColor = true;
-            this.LogOutButton.Click += new System.EventHandler(this.LogOutButton_Click);
-            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -133,6 +133,7 @@
             this.ClientSize = new System.Drawing.Size(1006, 564);
             this.Controls.Add(this.ChosenSettingPanel);
             this.Controls.Add(this.SettingMenuPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "SettingsForm";
             this.Text = "Settings";

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+
 
 namespace DesktopJournelApp
 {
@@ -206,7 +208,38 @@ namespace DesktopJournelApp
             RLGenresCheckedListBox.Visible = false;
         }
 
-       
+        private void SaveDataGridViewToCSV(DataGridView dataGridView, string fileName)
+        {
+            StringBuilder csvContent = new StringBuilder();
+
+            // Add headers
+            for (int i = 0; i < dataGridView.Columns.Count; i++)
+            {
+                csvContent.Append(dataGridView.Columns[i].HeaderText + ",");
+            }
+            csvContent.AppendLine();
+
+            // Add rows
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                for (int i = 0; i < dataGridView.Columns.Count; i++)
+                {
+                    csvContent.Append(row.Cells[i].Value + ",");
+                }
+                csvContent.AppendLine();
+            }
+
+            // Save to file
+            File.WriteAllText(fileName, csvContent.ToString());
+            MessageBox.Show("Log saved to " + fileName);
+        }
+
+        private void RLLogButton_Click(object sender, EventArgs e)
+        {
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string fileName = Path.Combine(desktopPath, "ReadingListLog.csv");
+            SaveDataGridViewToCSV(RLdataGridView, fileName);
+        }
     }
 
 

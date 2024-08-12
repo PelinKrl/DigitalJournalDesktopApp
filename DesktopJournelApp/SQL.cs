@@ -251,23 +251,23 @@ namespace DesktopJournelApp
             }
         }
 
-        public static DataTable ExecuteQuery(string query)
-        {
-            DataTable dataTable = new DataTable();
-            try
-            {
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    SqlDataAdapter adapter = new SqlDataAdapter(command);
-                    adapter.Fill(dataTable);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred: " + ex.Message);
-            }
-            return dataTable;
-        }
+        //public static DataTable ExecuteQuery(string query)
+        //{
+        //    DataTable dataTable = new DataTable();
+        //    try
+        //    {
+        //        using (SqlCommand command = new SqlCommand(query, connection))
+        //        {
+        //            SqlDataAdapter adapter = new SqlDataAdapter(command);
+        //            adapter.Fill(dataTable);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("An error occurred: " + ex.Message);
+        //    }
+        //    return dataTable;
+        //}
         public static void BindToGrid(string query, DataGridView dataGridView, int userId)
         {
             try
@@ -580,7 +580,7 @@ namespace DesktopJournelApp
                     command.Parameters.AddWithValue("@Comment", comment);
                     command.Parameters.AddWithValue("@Genre", genre);
                     command.Parameters.AddWithValue("@Date", DateTime.Now);
-                    command.Parameters.AddWithValue("@PageCount", pageCount);
+                    command.Parameters.AddWithValue("@PageCount", pageCount == -1 ? (object)DBNull.Value : pageCount);
                     command.Parameters.AddWithValue("@UserId", MainAppForm._userId);
 
 
@@ -616,7 +616,7 @@ namespace DesktopJournelApp
                     commandUpdate.Parameters.AddWithValue("@Comment", comment);
                     commandUpdate.Parameters.AddWithValue("@Genre", genre);
                     commandUpdate.Parameters.AddWithValue("@UserId", MainAppForm._userId);
-                    commandUpdate.Parameters.AddWithValue("@PageCount", pageCount);
+                    commandUpdate.Parameters.AddWithValue("@PageCount", pageCount == -1 ? (object)DBNull.Value : pageCount);
 
                     int result = commandUpdate.ExecuteNonQuery();
                     if (result > 0)
@@ -1187,6 +1187,30 @@ namespace DesktopJournelApp
             }
             return dataTable;
         }
+
+        public static string GetUserCity(int userId)
+        {
+            string city = "";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT Location FROM UsersTable WHERE Id = @UserId";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@UserId", userId);
+                        city = (string)command.ExecuteScalar();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error fetching city: " + ex.Message);
+            }
+            return city;
+        }
+
 
 
     }

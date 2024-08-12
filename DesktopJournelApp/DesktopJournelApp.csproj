@@ -37,6 +37,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Mars_cat_TransparanBackgrnd.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CefSharp, Version=126.2.180.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
       <HintPath>..\packages\CefSharp.Common.126.2.180\lib\net462\CefSharp.dll</HintPath>
@@ -165,12 +168,6 @@
     <Compile Include="JournalPageUserControl.Designer.cs">
       <DependentUpon>JournalPageUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="CalendarPageUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CalendarPageUserControl.Designer.cs">
-      <DependentUpon>CalendarPageUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="ReadingListPageUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -228,9 +225,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="JournalPageUserControl.resx">
       <DependentUpon>JournalPageUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CalendarPageUserControl.resx">
-      <DependentUpon>CalendarPageUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReadingListPageUserControl.resx">
       <DependentUpon>ReadingListPageUserControl.cs</DependentUpon>
@@ -296,6 +290,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Mars_cat_TransparanBackgrnd.ico" />
     <Content Include="WeatherApp\images\clear.png" />
     <Content Include="WeatherApp\images\clouds.png" />
     <Content Include="WeatherApp\images\drizzle.png" />

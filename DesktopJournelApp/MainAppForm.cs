@@ -387,5 +387,11 @@ namespace DesktopJournelApp
         //{
         //    JournalPanel.BackColor = Color.Transparent; 
         //}
+
+
+        //public void UpdateWeatherInfo(string weatherInfo)
+        //{
+        //    TodaysWeatherRichTextBox.Text = weatherInfo;
+        //}
     }
 }

@@ -45,8 +45,6 @@
             this.TaskPlannerPanel = new System.Windows.Forms.Panel();
             this.TaskPlannerPictureBox = new System.Windows.Forms.PictureBox();
             this.TaskPlannerLabel = new System.Windows.Forms.Label();
-            this.WeatherTodayPanel = new System.Windows.Forms.Panel();
-            this.TodaysWeatherLabel = new System.Windows.Forms.Label();
             this.ReminderOfTodayPanel = new System.Windows.Forms.Panel();
             this.todaysReminderLabel = new System.Windows.Forms.Label();
             this.TodaysReminderRichTextBox = new System.Windows.Forms.RichTextBox();
@@ -54,11 +52,11 @@
             this.UpRightdateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Today___label = new System.Windows.Forms.Label();
             this.WeeklyGraphPanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.WeeklyHabbitGraphLabel = new System.Windows.Forms.Label();
             this.MainAreaPanel = new System.Windows.Forms.Panel();
             this.DefaultBannerPictureBox = new System.Windows.Forms.PictureBox();
             this.SettingPictureBox = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.MarsPictureBox)).BeginInit();
             this.JournalPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JournalPictureBox)).BeginInit();
@@ -70,13 +68,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.readingListPictureBox)).BeginInit();
             this.TaskPlannerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TaskPlannerPictureBox)).BeginInit();
-            this.WeatherTodayPanel.SuspendLayout();
             this.ReminderOfTodayPanel.SuspendLayout();
             this.TodaysDatePanel.SuspendLayout();
             this.WeeklyGraphPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DefaultBannerPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SettingPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MarsPictureBox
@@ -97,7 +94,7 @@
             this.JournalPanel.Controls.Add(this.JournalPictureBox);
             this.JournalPanel.Controls.Add(this.JournalLabel);
             this.JournalPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.JournalPanel.Location = new System.Drawing.Point(189, 12);
+            this.JournalPanel.Location = new System.Drawing.Point(205, 11);
             this.JournalPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.JournalPanel.Name = "JournalPanel";
             this.JournalPanel.Size = new System.Drawing.Size(179, 84);
@@ -133,7 +130,7 @@
             this.WeatherAppPanel.Controls.Add(this.WeatherPictureBox);
             this.WeatherAppPanel.Controls.Add(this.WeatherAppLabel);
             this.WeatherAppPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.WeatherAppPanel.Location = new System.Drawing.Point(393, 12);
+            this.WeatherAppPanel.Location = new System.Drawing.Point(430, 11);
             this.WeatherAppPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WeatherAppPanel.Name = "WeatherAppPanel";
             this.WeatherAppPanel.Size = new System.Drawing.Size(207, 84);
@@ -169,7 +166,7 @@
             this.WatchListPanel.Controls.Add(this.WatchListPictureBox);
             this.WatchListPanel.Controls.Add(this.WatchListLabel);
             this.WatchListPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.WatchListPanel.Location = new System.Drawing.Point(627, 12);
+            this.WatchListPanel.Location = new System.Drawing.Point(685, 11);
             this.WatchListPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WatchListPanel.Name = "WatchListPanel";
             this.WatchListPanel.Size = new System.Drawing.Size(208, 84);
@@ -205,7 +202,7 @@
             this.ReadingListPanel.Controls.Add(this.readingListPictureBox);
             this.ReadingListPanel.Controls.Add(this.ReadlingListLabel);
             this.ReadingListPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ReadingListPanel.Location = new System.Drawing.Point(862, 12);
+            this.ReadingListPanel.Location = new System.Drawing.Point(950, 12);
             this.ReadingListPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ReadingListPanel.Name = "ReadingListPanel";
             this.ReadingListPanel.Size = new System.Drawing.Size(227, 84);
@@ -241,7 +238,7 @@
             this.TaskPlannerPanel.Controls.Add(this.TaskPlannerPictureBox);
             this.TaskPlannerPanel.Controls.Add(this.TaskPlannerLabel);
             this.TaskPlannerPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.TaskPlannerPanel.Location = new System.Drawing.Point(1115, 12);
+            this.TaskPlannerPanel.Location = new System.Drawing.Point(1229, 12);
             this.TaskPlannerPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TaskPlannerPanel.Name = "TaskPlannerPanel";
             this.TaskPlannerPanel.Size = new System.Drawing.Size(221, 84);
@@ -271,32 +268,12 @@
             this.TaskPlannerLabel.Text = "Task Planner";
             this.TaskPlannerLabel.Click += new System.EventHandler(this.TaskPlannerPanel_Click);
             // 
-            // WeatherTodayPanel
-            // 
-            this.WeatherTodayPanel.BackColor = System.Drawing.Color.Transparent;
-            this.WeatherTodayPanel.Controls.Add(this.TodaysWeatherLabel);
-            this.WeatherTodayPanel.Location = new System.Drawing.Point(3, 153);
-            this.WeatherTodayPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.WeatherTodayPanel.Name = "WeatherTodayPanel";
-            this.WeatherTodayPanel.Size = new System.Drawing.Size(195, 185);
-            this.WeatherTodayPanel.TabIndex = 8;
-            // 
-            // TodaysWeatherLabel
-            // 
-            this.TodaysWeatherLabel.AutoSize = true;
-            this.TodaysWeatherLabel.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TodaysWeatherLabel.Location = new System.Drawing.Point(3, 9);
-            this.TodaysWeatherLabel.Name = "TodaysWeatherLabel";
-            this.TodaysWeatherLabel.Size = new System.Drawing.Size(189, 20);
-            this.TodaysWeatherLabel.TabIndex = 0;
-            this.TodaysWeatherLabel.Text = "Today\'s Weather...";
-            // 
             // ReminderOfTodayPanel
             // 
             this.ReminderOfTodayPanel.BackColor = System.Drawing.Color.Transparent;
             this.ReminderOfTodayPanel.Controls.Add(this.todaysReminderLabel);
             this.ReminderOfTodayPanel.Controls.Add(this.TodaysReminderRichTextBox);
-            this.ReminderOfTodayPanel.Location = new System.Drawing.Point(3, 342);
+            this.ReminderOfTodayPanel.Location = new System.Drawing.Point(3, 151);
             this.ReminderOfTodayPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ReminderOfTodayPanel.Name = "ReminderOfTodayPanel";
             this.ReminderOfTodayPanel.Size = new System.Drawing.Size(192, 151);
@@ -362,12 +339,24 @@
             this.WeeklyGraphPanel.Controls.Add(this.pictureBox1);
             this.WeeklyGraphPanel.Controls.Add(this.WeeklyHabbitGraphLabel);
             this.WeeklyGraphPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.WeeklyGraphPanel.Location = new System.Drawing.Point(1356, 12);
+            this.WeeklyGraphPanel.Location = new System.Drawing.Point(1503, 12);
             this.WeeklyGraphPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WeeklyGraphPanel.Name = "WeeklyGraphPanel";
             this.WeeklyGraphPanel.Size = new System.Drawing.Size(239, 84);
             this.WeeklyGraphPanel.TabIndex = 12;
             this.WeeklyGraphPanel.Click += new System.EventHandler(this.WeeklyHabbitGraphLabel_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(15, 14);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 46);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.WeeklyHabbitGraphLabel_Click);
             // 
             // WeeklyHabbitGraphLabel
             // 
@@ -415,18 +404,6 @@
             this.SettingPictureBox.TabStop = false;
             this.SettingPictureBox.Click += new System.EventHandler(this.SettingPictureBox_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(15, 14);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(51, 46);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.WeeklyHabbitGraphLabel_Click);
-            // 
             // MainAppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -438,7 +415,6 @@
             this.Controls.Add(this.WeeklyGraphPanel);
             this.Controls.Add(this.TodaysDatePanel);
             this.Controls.Add(this.ReminderOfTodayPanel);
-            this.Controls.Add(this.WeatherTodayPanel);
             this.Controls.Add(this.TaskPlannerPanel);
             this.Controls.Add(this.ReadingListPanel);
             this.Controls.Add(this.WatchListPanel);
@@ -446,6 +422,7 @@
             this.Controls.Add(this.JournalPanel);
             this.Controls.Add(this.MarsPictureBox);
             this.Controls.Add(this.DefaultBannerPictureBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainAppForm";
             this.Text = "Digital Journal";
@@ -468,17 +445,15 @@
             this.TaskPlannerPanel.ResumeLayout(false);
             this.TaskPlannerPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TaskPlannerPictureBox)).EndInit();
-            this.WeatherTodayPanel.ResumeLayout(false);
-            this.WeatherTodayPanel.PerformLayout();
             this.ReminderOfTodayPanel.ResumeLayout(false);
             this.ReminderOfTodayPanel.PerformLayout();
             this.TodaysDatePanel.ResumeLayout(false);
             this.TodaysDatePanel.PerformLayout();
             this.WeeklyGraphPanel.ResumeLayout(false);
             this.WeeklyGraphPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DefaultBannerPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SettingPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -496,10 +471,8 @@
         private System.Windows.Forms.Label ReadlingListLabel;
         private System.Windows.Forms.Panel TaskPlannerPanel;
         private System.Windows.Forms.Label TaskPlannerLabel;
-        private System.Windows.Forms.Panel WeatherTodayPanel;
         private System.Windows.Forms.Panel ReminderOfTodayPanel;
         private System.Windows.Forms.Label todaysReminderLabel;
-        private System.Windows.Forms.Label TodaysWeatherLabel;
         private System.Windows.Forms.Panel TodaysDatePanel;
         private System.Windows.Forms.Label Today___label;
         private System.Windows.Forms.DateTimePicker UpRightdateTimePicker;

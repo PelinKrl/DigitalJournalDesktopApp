@@ -72,8 +72,6 @@ namespace DesktopJournelApp
             }
 
 
-           
-
         }
 
         private void WLListMoviesButton_Click(object sender, EventArgs e)
@@ -235,7 +233,6 @@ namespace DesktopJournelApp
         }
 
         
-
         private void WLListStateButton_Click(object sender, EventArgs e)
         {
             string state = WLStateFilterComboBox.SelectedItem.ToString();
@@ -249,134 +246,37 @@ namespace DesktopJournelApp
             }
         }
 
-        private void WLdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void SaveDataGridViewToCSV(DataGridView dataGridView, string fileName)
         {
+            StringBuilder csvContent = new StringBuilder();
 
+            // Add headers
+            for (int i = 0; i < dataGridView.Columns.Count; i++)
+            {
+                csvContent.Append(dataGridView.Columns[i].HeaderText + ",");
+            }
+            csvContent.AppendLine();
+
+            // Add rows
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                for (int i = 0; i < dataGridView.Columns.Count; i++)
+                {
+                    csvContent.Append(row.Cells[i].Value + ",");
+                }
+                csvContent.AppendLine();
+            }
+
+            // Save to file
+            File.WriteAllText(fileName, csvContent.ToString());
+            MessageBox.Show("Log saved to " + fileName);
         }
 
-        private void WLStateFilterComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void WLLogButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WatchListPMPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GenresCheckedListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MyWatchListTitleLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void SearchComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GenreComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WLCommentsRichTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WLRatingTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WLStateComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WLSearchTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WLDirectorTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WLNameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WLTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MovieTvSName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void watchTableBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WatchListPageUserControl_Load(object sender, EventArgs e)
-        {
-
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string fileName = Path.Combine(desktopPath, "WatchingListLog.csv");
+            SaveDataGridViewToCSV(WLdataGridView, fileName);
         }
     }
 }
